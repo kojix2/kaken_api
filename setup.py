@@ -25,9 +25,9 @@ setup(
     description="KAKEN API Client Library for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="",
-    author_email="",
-    url="https://github.com/kojix2/kaken-api",
+    author="kojix2",
+    author_email="2xijok@gmail.com",
+    url="https://github.com/kojix2/kaken_api",
     packages=find_packages(),
     install_requires=[
         "requests>=2.25.0",
@@ -44,5 +44,5 @@ setup(
         "Programming Language :: Python :: 3.13",
         "Topic :: Scientific/Engineering",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.10",
 )
