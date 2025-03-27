@@ -181,6 +181,17 @@
 <li><p>登録が完了すると、アプリケーションIDが発行されます。</p></li>
 </ol>
 </section>
+<section id="github-actions">
+<h2>GitHub Actionsでのテスト実行<a class="headerlink" href="#github-actions" title="Link to this heading"></a></h2>
+<p>このリポジトリではGitHub Actionsを使用して自動テストを実行しています。APIを使用するテストを実行するには、GitHub SecretsにアプリケーションIDを設定する必要があります。</p>
+<ol class="arabic simple">
+<li><p>GitHubリポジトリの「Settings」→「Secrets and variables」→「Actions」に移動します。</p></li>
+<li><p>「New repository secret」ボタンをクリックします。</p></li>
+<li><p>名前に「KAKEN_APP_ID」、値にアプリケーションIDを入力して保存します。</p></li>
+</ol>
+<p>これにより、GitHub Actions上でもAPIを使用するテストが実行されるようになります。</p>
+<p>なお、フォークされたリポジトリからのプルリクエストでは、セキュリティ上の理由からシークレットにアクセスできないため、APIを使用するテストはスキップされます。</p>
+</section>
 <section id="api">
 <h2>API リファレンス<a class="headerlink" href="#api" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
