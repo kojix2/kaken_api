@@ -20,6 +20,29 @@ client = KakenApiClient(app_id="your_app_id")
 
 # または、アプリケーションIDなしで初期化（一部の機能が制限される場合があります）
 client = KakenApiClient()
+
+# キャッシュを無効化して初期化
+client = KakenApiClient(use_cache=False)
+
+# カスタムキャッシュディレクトリを指定して初期化
+client = KakenApiClient(cache_dir="/path/to/cache")
+```
+
+### キャッシュ機能
+
+このライブラリには、APIリクエストの結果をキャッシュする機能が組み込まれています。これにより、同じリクエストを繰り返し行う場合に、APIサーバーへの負荷を軽減し、レスポンス時間を短縮することができます。
+
+キャッシュはデフォルトで有効になっており、`~/.kaken_api_cache`ディレクトリに保存されます。キャッシュを無効化したり、カスタムキャッシュディレクトリを指定したりすることもできます。
+
+```python
+# キャッシュを無効化
+client = KakenApiClient(use_cache=False)
+
+# カスタムキャッシュディレクトリを指定
+client = KakenApiClient(cache_dir="/path/to/cache")
+
+# キャッシュをクリア
+client.cache.clear()
 ```
 
 ### 研究課題の検索
