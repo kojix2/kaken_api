@@ -1,0 +1,1412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kaken_api package &mdash; KAKEN API  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kaken_api.api package" href="kaken_api.api.html" />
+    <link rel="prev" title="kaken_api" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            KAKEN API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kaken_api</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">kaken_api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html">kaken_api.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.cache">kaken_api.cache module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.cache.ResponseCache"><code class="docutils literal notranslate"><span class="pre">ResponseCache</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.client">kaken_api.client module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.client.KakenApiClient"><code class="docutils literal notranslate"><span class="pre">KakenApiClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.constants">kaken_api.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.exceptions">kaken_api.exceptions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiError"><code class="docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiRequestError"><code class="docutils literal notranslate"><span class="pre">KakenApiRequestError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiResponseError"><code class="docutils literal notranslate"><span class="pre">KakenApiResponseError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiAuthError"><code class="docutils literal notranslate"><span class="pre">KakenApiAuthError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiRateLimitError"><code class="docutils literal notranslate"><span class="pre">KakenApiRateLimitError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.exceptions.KakenApiNotFoundError"><code class="docutils literal notranslate"><span class="pre">KakenApiNotFoundError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.models">kaken_api.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.KakenApiResponse"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Institution"><code class="docutils literal notranslate"><span class="pre">Institution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Department"><code class="docutils literal notranslate"><span class="pre">Department</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.JobTitle"><code class="docutils literal notranslate"><span class="pre">JobTitle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Affiliation"><code class="docutils literal notranslate"><span class="pre">Affiliation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.PersonName"><code class="docutils literal notranslate"><span class="pre">PersonName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Researcher"><code class="docutils literal notranslate"><span class="pre">Researcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ResearcherRole"><code class="docutils literal notranslate"><span class="pre">ResearcherRole</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Category"><code class="docutils literal notranslate"><span class="pre">Category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Field"><code class="docutils literal notranslate"><span class="pre">Field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Keyword"><code class="docutils literal notranslate"><span class="pre">Keyword</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ProjectStatus"><code class="docutils literal notranslate"><span class="pre">ProjectStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.PeriodOfAward"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.AwardAmount"><code class="docutils literal notranslate"><span class="pre">AwardAmount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Project"><code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ProductIdentifier"><code class="docutils literal notranslate"><span class="pre">ProductIdentifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ProductAuthor"><code class="docutils literal notranslate"><span class="pre">ProductAuthor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.Product"><code class="docutils literal notranslate"><span class="pre">Product</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ProjectsResponse"><code class="docutils literal notranslate"><span class="pre">ProjectsResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ResearchersResponse"><code class="docutils literal notranslate"><span class="pre">ResearchersResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.models.ProductsResponse"><code class="docutils literal notranslate"><span class="pre">ProductsResponse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api.utils">kaken_api.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.utils.build_url"><code class="docutils literal notranslate"><span class="pre">build_url()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.utils.ensure_list"><code class="docutils literal notranslate"><span class="pre">ensure_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.utils.clean_text"><code class="docutils literal notranslate"><span class="pre">clean_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.utils.parse_boolean"><code class="docutils literal notranslate"><span class="pre">parse_boolean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.utils.join_values"><code class="docutils literal notranslate"><span class="pre">join_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kaken_api">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kaken_api.KakenApiClient"><code class="docutils literal notranslate"><span class="pre">KakenApiClient</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KAKEN API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">kaken_api</a></li>
+      <li class="breadcrumb-item active">kaken_api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/kaken_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kaken-api-package">
+<h1>kaken_api package<a class="headerlink" href="#kaken-api-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kaken_api.api.html">kaken_api.api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api.projects">kaken_api.api.projects module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.projects.ProjectsAPI"><code class="docutils literal notranslate"><span class="pre">ProjectsAPI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.projects.ProjectsAPI.search"><code class="docutils literal notranslate"><span class="pre">ProjectsAPI.search()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api.researchers">kaken_api.api.researchers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.researchers.ResearchersAPI"><code class="docutils literal notranslate"><span class="pre">ResearchersAPI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.researchers.ResearchersAPI.search"><code class="docutils literal notranslate"><span class="pre">ResearchersAPI.search()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.ProjectsAPI"><code class="docutils literal notranslate"><span class="pre">ProjectsAPI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.ProjectsAPI.search"><code class="docutils literal notranslate"><span class="pre">ProjectsAPI.search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.ResearchersAPI"><code class="docutils literal notranslate"><span class="pre">ResearchersAPI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#kaken_api.api.ResearchersAPI.search"><code class="docutils literal notranslate"><span class="pre">ResearchersAPI.search()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-kaken_api.cache">
+<span id="kaken-api-cache-module"></span><h2>kaken_api.cache module<a class="headerlink" href="#module-kaken_api.cache" title="Link to this heading"></a></h2>
+<p>Cache module for the KAKEN API client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.cache.ResponseCache">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.cache.</span></span><span class="sig-name descname"><span class="pre">ResponseCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/cache.html#ResponseCache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.cache.ResponseCache" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cache for API responses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cache_dir</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.cache.ResponseCache.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/cache.html#ResponseCache.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.cache.ResponseCache.get" title="Link to this definition"></a></dt>
+<dd><p>Get a cached response for the given URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – The URL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cached response, or None if not found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.cache.ResponseCache.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/cache.html#ResponseCache.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.cache.ResponseCache.set" title="Link to this definition"></a></dt>
+<dd><p>Set a cached response for the given URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – The URL.</p></li>
+<li><p><strong>content</strong> (<em>bytes</em>) – The response content.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.cache.ResponseCache.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/cache.html#ResponseCache.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.cache.ResponseCache.clear" title="Link to this definition"></a></dt>
+<dd><p>Clear the cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.client">
+<span id="kaken-api-client-module"></span><h2>kaken_api.client module<a class="headerlink" href="#module-kaken_api.client" title="Link to this heading"></a></h2>
+<p>Main client for the KAKEN API.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.client.KakenApiClient">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.client.</span></span><span class="sig-name descname"><span class="pre">KakenApiClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/client.html#KakenApiClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.client.KakenApiClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Client for the KAKEN API.</p>
+<p>This client provides access to the KAKEN API, which allows searching for
+research projects and researchers funded by KAKEN (Grants-in-Aid for Scientific Research).</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">kaken_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">KakenApiClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">KakenApiClient</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s2">&quot;your_app_id&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">projects</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;人工知能&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="o">.</span><span class="n">projects</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>)</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em>)</p></li>
+<li><p><strong>session</strong> (<em>Session</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>use_cache</strong> (<em>bool</em>)</p></li>
+<li><p><strong>cache_dir</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.client.KakenApiClient.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/client.html#KakenApiClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.client.KakenApiClient.close" title="Link to this definition"></a></dt>
+<dd><p>Close the client session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.constants">
+<span id="kaken-api-constants-module"></span><h2>kaken_api.constants module<a class="headerlink" href="#module-kaken_api.constants" title="Link to this heading"></a></h2>
+<p>Constants for the KAKEN API client.</p>
+</section>
+<section id="module-kaken_api.exceptions">
+<span id="kaken-api-exceptions-module"></span><h2>kaken_api.exceptions module<a class="headerlink" href="#module-kaken_api.exceptions" title="Link to this heading"></a></h2>
+<p>Exceptions for the KAKEN API client.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base exception for all KAKEN API errors.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiRequestError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiRequestError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiRequestError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiRequestError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.exceptions.KakenApiError" title="kaken_api.exceptions.KakenApiError"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></p>
+<p>Exception raised when there is an error with the request.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiResponseError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiResponseError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiResponseError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiResponseError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.exceptions.KakenApiError" title="kaken_api.exceptions.KakenApiError"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></p>
+<p>Exception raised when there is an error with the response.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiAuthError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiAuthError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiAuthError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiAuthError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.exceptions.KakenApiError" title="kaken_api.exceptions.KakenApiError"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></p>
+<p>Exception raised when there is an authentication error.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiRateLimitError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiRateLimitError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiRateLimitError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiRateLimitError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.exceptions.KakenApiError" title="kaken_api.exceptions.KakenApiError"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></p>
+<p>Exception raised when the API rate limit is exceeded.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kaken_api.exceptions.KakenApiNotFoundError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.exceptions.</span></span><span class="sig-name descname"><span class="pre">KakenApiNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/exceptions.html#KakenApiNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.exceptions.KakenApiNotFoundError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.exceptions.KakenApiError" title="kaken_api.exceptions.KakenApiError"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></p>
+<p>Exception raised when a resource is not found.</p>
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.models">
+<span id="kaken-api-models-module"></span><h2>kaken_api.models module<a class="headerlink" href="#module-kaken_api.models" title="Link to this heading"></a></h2>
+<p>Data models for the KAKEN API client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.KakenApiResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">KakenApiResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_per_page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#KakenApiResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.KakenApiResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for KAKEN API responses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+<li><p><strong>total_results</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_index</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>items_per_page</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.KakenApiResponse.raw_data">
+<span class="sig-name descname"><span class="pre">raw_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#kaken_api.models.KakenApiResponse.raw_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.KakenApiResponse.total_results">
+<span class="sig-name descname"><span class="pre">total_results</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.KakenApiResponse.total_results" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.KakenApiResponse.start_index">
+<span class="sig-name descname"><span class="pre">start_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.KakenApiResponse.start_index" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.KakenApiResponse.items_per_page">
+<span class="sig-name descname"><span class="pre">items_per_page</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.KakenApiResponse.items_per_page" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Institution">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Institution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Institution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Institution" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Institution information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>code</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>type</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Institution.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.Institution.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Institution.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Institution.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Institution.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Institution.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Department">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Department</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Department"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Department" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Department information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>code</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Department.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.Department.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Department.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Department.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.JobTitle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">JobTitle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#JobTitle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.JobTitle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Job title information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>code</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.JobTitle.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.JobTitle.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.JobTitle.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.JobTitle.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Affiliation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">department</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Affiliation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Affiliation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Affiliation information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>institution</strong> (<a class="reference internal" href="#kaken_api.models.Institution" title="kaken_api.models.Institution"><em>Institution</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>department</strong> (<a class="reference internal" href="#kaken_api.models.Department" title="kaken_api.models.Department"><em>Department</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>job_title</strong> (<a class="reference internal" href="#kaken_api.models.JobTitle" title="kaken_api.models.JobTitle"><em>JobTitle</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>end_date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation.institution">
+<span class="sig-name descname"><span class="pre">institution</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.Institution" title="kaken_api.models.Institution"><span class="pre">Institution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Affiliation.institution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation.department">
+<span class="sig-name descname"><span class="pre">department</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.Department" title="kaken_api.models.Department"><span class="pre">Department</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Affiliation.department" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation.job_title">
+<span class="sig-name descname"><span class="pre">job_title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.JobTitle" title="kaken_api.models.JobTitle"><span class="pre">JobTitle</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Affiliation.job_title" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation.start_date">
+<span class="sig-name descname"><span class="pre">start_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Affiliation.start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Affiliation.end_date">
+<span class="sig-name descname"><span class="pre">end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Affiliation.end_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">PersonName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">family_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">given_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">family_name_reading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">given_name_reading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#PersonName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.PersonName" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Person name information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>full_name</strong> (<em>str</em>)</p></li>
+<li><p><strong>family_name</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>given_name</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>family_name_reading</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>given_name_reading</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName.full_name">
+<span class="sig-name descname"><span class="pre">full_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.PersonName.full_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName.family_name">
+<span class="sig-name descname"><span class="pre">family_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PersonName.family_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName.given_name">
+<span class="sig-name descname"><span class="pre">given_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PersonName.given_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName.family_name_reading">
+<span class="sig-name descname"><span class="pre">family_name_reading</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PersonName.family_name_reading" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PersonName.given_name_reading">
+<span class="sig-name descname"><span class="pre">given_name_reading</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PersonName.given_name_reading" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Researcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affiliations=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_number=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erad_researcher_number=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jglobal_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researchmap_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orcid=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projects=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">products=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Researcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Researcher" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Researcher information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="#kaken_api.models.PersonName" title="kaken_api.models.PersonName"><em>PersonName</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>affiliations</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Affiliation" title="kaken_api.models.Affiliation"><em>Affiliation</em></a><em>]</em>)</p></li>
+<li><p><strong>researcher_number</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>erad_researcher_number</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>jglobal_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>researchmap_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>orcid</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>projects</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Project" title="kaken_api.models.Project"><em>Project</em></a><em>]</em>)</p></li>
+<li><p><strong>products</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Product" title="kaken_api.models.Product"><em>Product</em></a><em>]</em>)</p></li>
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.PersonName" title="kaken_api.models.PersonName"><span class="pre">PersonName</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.affiliations">
+<span class="sig-name descname"><span class="pre">affiliations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Affiliation" title="kaken_api.models.Affiliation"><span class="pre">Affiliation</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Researcher.affiliations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.researcher_number">
+<span class="sig-name descname"><span class="pre">researcher_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.researcher_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.erad_researcher_number">
+<span class="sig-name descname"><span class="pre">erad_researcher_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.erad_researcher_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.jglobal_id">
+<span class="sig-name descname"><span class="pre">jglobal_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.jglobal_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.researchmap_id">
+<span class="sig-name descname"><span class="pre">researchmap_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.researchmap_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.orcid">
+<span class="sig-name descname"><span class="pre">orcid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.orcid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.projects">
+<span class="sig-name descname"><span class="pre">projects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Project" title="kaken_api.models.Project"><span class="pre">Project</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Researcher.projects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.products">
+<span class="sig-name descname"><span class="pre">products</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Product" title="kaken_api.models.Product"><span class="pre">Product</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Researcher.products" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Researcher.raw_data">
+<span class="sig-name descname"><span class="pre">raw_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Researcher.raw_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ResearcherRole">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ResearcherRole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">researcher</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">participate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ResearcherRole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ResearcherRole" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Researcher role information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>researcher</strong> (<a class="reference internal" href="#kaken_api.models.Researcher" title="kaken_api.models.Researcher"><em>Researcher</em></a>)</p></li>
+<li><p><strong>role</strong> (<em>str</em>)</p></li>
+<li><p><strong>participate</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ResearcherRole.researcher">
+<span class="sig-name descname"><span class="pre">researcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.Researcher" title="kaken_api.models.Researcher"><span class="pre">Researcher</span></a></em><a class="headerlink" href="#kaken_api.models.ResearcherRole.researcher" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ResearcherRole.role">
+<span class="sig-name descname"><span class="pre">role</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.ResearcherRole.role" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ResearcherRole.participate">
+<span class="sig-name descname"><span class="pre">participate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.ResearcherRole.participate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Category">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Category" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Category information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>path</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>code</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Category.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.Category.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Category.path">
+<span class="sig-name descname"><span class="pre">path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Category.path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Category.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Category.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Field">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Field" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Field information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>path</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>code</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>field_table</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Field.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.Field.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Field.path">
+<span class="sig-name descname"><span class="pre">path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Field.path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Field.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Field.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Field.field_table">
+<span class="sig-name descname"><span class="pre">field_table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Field.field_table" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Keyword">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Keyword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Keyword"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Keyword" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Keyword information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>)</p></li>
+<li><p><strong>language</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Keyword.text">
+<span class="sig-name descname"><span class="pre">text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.Keyword.text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Keyword.language">
+<span class="sig-name descname"><span class="pre">language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Keyword.language" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectStatus">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ProjectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ProjectStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ProjectStatus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Project status information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status_code</strong> (<em>str</em>)</p></li>
+<li><p><strong>date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>note</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectStatus.status_code">
+<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.ProjectStatus.status_code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectStatus.date">
+<span class="sig-name descname"><span class="pre">date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.ProjectStatus.date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectStatus.note">
+<span class="sig-name descname"><span class="pre">note</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.ProjectStatus.note" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.PeriodOfAward">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">PeriodOfAward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_fiscal_year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_fiscal_year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#PeriodOfAward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.PeriodOfAward" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Period of award information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>end_date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_fiscal_year</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>end_fiscal_year</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PeriodOfAward.start_date">
+<span class="sig-name descname"><span class="pre">start_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PeriodOfAward.start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PeriodOfAward.end_date">
+<span class="sig-name descname"><span class="pre">end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PeriodOfAward.end_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PeriodOfAward.start_fiscal_year">
+<span class="sig-name descname"><span class="pre">start_fiscal_year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PeriodOfAward.start_fiscal_year" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.PeriodOfAward.end_fiscal_year">
+<span class="sig-name descname"><span class="pre">end_fiscal_year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.PeriodOfAward.end_fiscal_year" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">AwardAmount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indirect_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fiscal_year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'JPY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#AwardAmount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.AwardAmount" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Award amount information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total_cost</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>direct_cost</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>indirect_cost</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>fiscal_year</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>currency</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>planned</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.total_cost">
+<span class="sig-name descname"><span class="pre">total_cost</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.total_cost" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.direct_cost">
+<span class="sig-name descname"><span class="pre">direct_cost</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.direct_cost" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.indirect_cost">
+<span class="sig-name descname"><span class="pre">indirect_cost</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.indirect_cost" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.fiscal_year">
+<span class="sig-name descname"><span class="pre">fiscal_year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.fiscal_year" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.currency">
+<span class="sig-name descname"><span class="pre">currency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPY'</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.currency" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.AwardAmount.planned">
+<span class="sig-name descname"><span class="pre">planned</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.AwardAmount.planned" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Project">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">award_number=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_en=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_abbreviated=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institutions=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period_of_award=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_status=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allocation_type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">award_amounts=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Project" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Project information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>award_number</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>title</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>title_en</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>title_abbreviated</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>categories</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Category" title="kaken_api.models.Category"><em>Category</em></a><em>]</em>)</p></li>
+<li><p><strong>fields</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Field" title="kaken_api.models.Field"><em>Field</em></a><em>]</em>)</p></li>
+<li><p><strong>institutions</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Institution" title="kaken_api.models.Institution"><em>Institution</em></a><em>]</em>)</p></li>
+<li><p><strong>keywords</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Keyword" title="kaken_api.models.Keyword"><em>Keyword</em></a><em>]</em>)</p></li>
+<li><p><strong>period_of_award</strong> (<a class="reference internal" href="#kaken_api.models.PeriodOfAward" title="kaken_api.models.PeriodOfAward"><em>PeriodOfAward</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>project_status</strong> (<a class="reference internal" href="#kaken_api.models.ProjectStatus" title="kaken_api.models.ProjectStatus"><em>ProjectStatus</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>project_type</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>allocation_type</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>members</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.ResearcherRole" title="kaken_api.models.ResearcherRole"><em>ResearcherRole</em></a><em>]</em>)</p></li>
+<li><p><strong>award_amounts</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.AwardAmount" title="kaken_api.models.AwardAmount"><em>AwardAmount</em></a><em>]</em>)</p></li>
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.award_number">
+<span class="sig-name descname"><span class="pre">award_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.award_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.title" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.title_en">
+<span class="sig-name descname"><span class="pre">title_en</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.title_en" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.title_abbreviated">
+<span class="sig-name descname"><span class="pre">title_abbreviated</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.title_abbreviated" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.categories">
+<span class="sig-name descname"><span class="pre">categories</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Category" title="kaken_api.models.Category"><span class="pre">Category</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.categories" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Field" title="kaken_api.models.Field"><span class="pre">Field</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.institutions">
+<span class="sig-name descname"><span class="pre">institutions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Institution" title="kaken_api.models.Institution"><span class="pre">Institution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.institutions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.keywords">
+<span class="sig-name descname"><span class="pre">keywords</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Keyword" title="kaken_api.models.Keyword"><span class="pre">Keyword</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.keywords" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.period_of_award">
+<span class="sig-name descname"><span class="pre">period_of_award</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.PeriodOfAward" title="kaken_api.models.PeriodOfAward"><span class="pre">PeriodOfAward</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.period_of_award" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.project_status">
+<span class="sig-name descname"><span class="pre">project_status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kaken_api.models.ProjectStatus" title="kaken_api.models.ProjectStatus"><span class="pre">ProjectStatus</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.project_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.project_type">
+<span class="sig-name descname"><span class="pre">project_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.project_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.allocation_type">
+<span class="sig-name descname"><span class="pre">allocation_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.allocation_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.members">
+<span class="sig-name descname"><span class="pre">members</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.ResearcherRole" title="kaken_api.models.ResearcherRole"><span class="pre">ResearcherRole</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.members" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.award_amounts">
+<span class="sig-name descname"><span class="pre">award_amounts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.AwardAmount" title="kaken_api.models.AwardAmount"><span class="pre">AwardAmount</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Project.award_amounts" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Project.raw_data">
+<span class="sig-name descname"><span class="pre">raw_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Project.raw_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ProductIdentifier">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ProductIdentifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authenticated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ProductIdentifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ProductIdentifier" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Product identifier information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>)</p></li>
+<li><p><strong>value</strong> (<em>str</em>)</p></li>
+<li><p><strong>authenticated</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductIdentifier.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.ProductIdentifier.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductIdentifier.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.ProductIdentifier.value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductIdentifier.authenticated">
+<span class="sig-name descname"><span class="pre">authenticated</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.ProductIdentifier.authenticated" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ProductAuthor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ProductAuthor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ProductAuthor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ProductAuthor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Product author information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>sequence</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>researcher_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductAuthor.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#kaken_api.models.ProductAuthor.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductAuthor.sequence">
+<span class="sig-name descname"><span class="pre">sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.ProductAuthor.sequence" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductAuthor.researcher_id">
+<span class="sig-name descname"><span class="pre">researcher_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.ProductAuthor.researcher_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.Product">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">Product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_en=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authors=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journal_title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journal_title_en=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issue=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pages=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publication_date=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reviewed=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invited=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foreign=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_access=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acknowledgement=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_international=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifiers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#Product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.Product" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Product information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>type</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>title</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>title_en</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>authors</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.ProductAuthor" title="kaken_api.models.ProductAuthor"><em>ProductAuthor</em></a><em>]</em>)</p></li>
+<li><p><strong>journal_title</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>journal_title_en</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>volume</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>issue</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>pages</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>publication_date</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>language</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>reviewed</strong> (<em>bool</em>)</p></li>
+<li><p><strong>invited</strong> (<em>bool</em>)</p></li>
+<li><p><strong>foreign</strong> (<em>bool</em>)</p></li>
+<li><p><strong>open_access</strong> (<em>bool</em>)</p></li>
+<li><p><strong>acknowledgement</strong> (<em>bool</em>)</p></li>
+<li><p><strong>joint_international</strong> (<em>bool</em>)</p></li>
+<li><p><strong>identifiers</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.ProductIdentifier" title="kaken_api.models.ProductIdentifier"><em>ProductIdentifier</em></a><em>]</em>)</p></li>
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.title" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.title_en">
+<span class="sig-name descname"><span class="pre">title_en</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.title_en" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.authors">
+<span class="sig-name descname"><span class="pre">authors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.ProductAuthor" title="kaken_api.models.ProductAuthor"><span class="pre">ProductAuthor</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Product.authors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.journal_title">
+<span class="sig-name descname"><span class="pre">journal_title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.journal_title" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.journal_title_en">
+<span class="sig-name descname"><span class="pre">journal_title_en</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.journal_title_en" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.volume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.issue">
+<span class="sig-name descname"><span class="pre">issue</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.issue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.pages">
+<span class="sig-name descname"><span class="pre">pages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.pages" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.publication_date">
+<span class="sig-name descname"><span class="pre">publication_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.publication_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.language">
+<span class="sig-name descname"><span class="pre">language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.language" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.reviewed">
+<span class="sig-name descname"><span class="pre">reviewed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.reviewed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.invited">
+<span class="sig-name descname"><span class="pre">invited</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.invited" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.foreign">
+<span class="sig-name descname"><span class="pre">foreign</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.foreign" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.open_access">
+<span class="sig-name descname"><span class="pre">open_access</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.open_access" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.acknowledgement">
+<span class="sig-name descname"><span class="pre">acknowledgement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.acknowledgement" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.joint_international">
+<span class="sig-name descname"><span class="pre">joint_international</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kaken_api.models.Product.joint_international" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.identifiers">
+<span class="sig-name descname"><span class="pre">identifiers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.ProductIdentifier" title="kaken_api.models.ProductIdentifier"><span class="pre">ProductIdentifier</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.Product.identifiers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.Product.raw_data">
+<span class="sig-name descname"><span class="pre">raw_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#kaken_api.models.Product.raw_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectsResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ProjectsResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_results=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_per_page=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projects=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ProjectsResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ProjectsResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.models.KakenApiResponse" title="kaken_api.models.KakenApiResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiResponse</span></code></a></p>
+<p>Response for projects search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+<li><p><strong>total_results</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_index</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>items_per_page</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>projects</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Project" title="kaken_api.models.Project"><em>Project</em></a><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProjectsResponse.projects">
+<span class="sig-name descname"><span class="pre">projects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Project" title="kaken_api.models.Project"><span class="pre">Project</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.ProjectsResponse.projects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ResearchersResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ResearchersResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_results=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_per_page=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researchers=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ResearchersResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ResearchersResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.models.KakenApiResponse" title="kaken_api.models.KakenApiResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiResponse</span></code></a></p>
+<p>Response for researchers search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+<li><p><strong>total_results</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_index</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>items_per_page</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>researchers</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Researcher" title="kaken_api.models.Researcher"><em>Researcher</em></a><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ResearchersResponse.researchers">
+<span class="sig-name descname"><span class="pre">researchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Researcher" title="kaken_api.models.Researcher"><span class="pre">Researcher</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.ResearchersResponse.researchers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.models.ProductsResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.models.</span></span><span class="sig-name descname"><span class="pre">ProductsResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_results=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_per_page=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">products=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/models.html#ProductsResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.models.ProductsResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kaken_api.models.KakenApiResponse" title="kaken_api.models.KakenApiResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">KakenApiResponse</span></code></a></p>
+<p>Response for products search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<em>Any</em>)</p></li>
+<li><p><strong>total_results</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>start_index</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>items_per_page</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>products</strong> (<em>List</em><em>[</em><a class="reference internal" href="#kaken_api.models.Product" title="kaken_api.models.Product"><em>Product</em></a><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kaken_api.models.ProductsResponse.products">
+<span class="sig-name descname"><span class="pre">products</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kaken_api.models.Product" title="kaken_api.models.Product"><span class="pre">Product</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kaken_api.models.ProductsResponse.products" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.utils">
+<span id="kaken-api-utils-module"></span><h2>kaken_api.utils module<a class="headerlink" href="#module-kaken_api.utils" title="Link to this heading"></a></h2>
+<p>Utility functions for the KAKEN API client.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="kaken_api.utils.build_url">
+<span class="sig-prename descclassname"><span class="pre">kaken_api.utils.</span></span><span class="sig-name descname"><span class="pre">build_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/utils.html#build_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.utils.build_url" title="Link to this definition"></a></dt>
+<dd><p>Build a URL with query parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<em>str</em>) – The base URL.</p></li>
+<li><p><strong>params</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The query parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The URL with query parameters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaken_api.utils.ensure_list">
+<span class="sig-prename descclassname"><span class="pre">kaken_api.utils.</span></span><span class="sig-name descname"><span class="pre">ensure_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/utils.html#ensure_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.utils.ensure_list" title="Link to this definition"></a></dt>
+<dd><p>Ensure that a value is a list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>List</em><em> | </em><em>Any</em>) – The value to ensure is a list.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value as a list.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaken_api.utils.clean_text">
+<span class="sig-prename descclassname"><span class="pre">kaken_api.utils.</span></span><span class="sig-name descname"><span class="pre">clean_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/utils.html#clean_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.utils.clean_text" title="Link to this definition"></a></dt>
+<dd><p>Clean text by removing extra whitespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em><em> | </em><em>None</em>) – The text to clean.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cleaned text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaken_api.utils.parse_boolean">
+<span class="sig-prename descclassname"><span class="pre">kaken_api.utils.</span></span><span class="sig-name descname"><span class="pre">parse_boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/utils.html#parse_boolean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.utils.parse_boolean" title="Link to this definition"></a></dt>
+<dd><p>Parse a boolean value from a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em><em> | </em><em>bool</em><em> | </em><em>None</em>) – The value to parse.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed boolean value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaken_api.utils.join_values">
+<span class="sig-prename descclassname"><span class="pre">kaken_api.utils.</span></span><span class="sig-name descname"><span class="pre">join_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/utils.html#join_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.utils.join_values" title="Link to this definition"></a></dt>
+<dd><p>Join a list of values into a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The values to join.</p></li>
+<li><p><strong>separator</strong> (<em>str</em>) – The separator to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The joined string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-kaken_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kaken_api" title="Link to this heading"></a></h2>
+<p>KAKEN API Client Library for Python.</p>
+<p>This library provides a Python interface to the KAKEN (Grants-in-Aid for Scientific Research) API.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.KakenApiClient">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.</span></span><span class="sig-name descname"><span class="pre">KakenApiClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/client.html#KakenApiClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.KakenApiClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Client for the KAKEN API.</p>
+<p>This client provides access to the KAKEN API, which allows searching for
+research projects and researchers funded by KAKEN (Grants-in-Aid for Scientific Research).</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">kaken_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">KakenApiClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">KakenApiClient</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s2">&quot;your_app_id&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">projects</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;人工知能&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="o">.</span><span class="n">projects</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>)</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em>)</p></li>
+<li><p><strong>session</strong> (<em>Session</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>use_cache</strong> (<em>bool</em>)</p></li>
+<li><p><strong>cache_dir</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.KakenApiClient.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/client.html#KakenApiClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.KakenApiClient.close" title="Link to this definition"></a></dt>
+<dd><p>Close the client session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="kaken_api" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kaken_api.api.html" class="btn btn-neutral float-right" title="kaken_api.api package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, kojix2.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

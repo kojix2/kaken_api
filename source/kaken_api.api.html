@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kaken_api.api package &mdash; KAKEN API  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="kaken_api package" href="kaken_api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            KAKEN API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kaken_api</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="kaken_api.html">kaken_api package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="kaken_api.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">kaken_api.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.cache">kaken_api.cache module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.client">kaken_api.client module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.constants">kaken_api.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.exceptions">kaken_api.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.models">kaken_api.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api.utils">kaken_api.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#module-kaken_api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KAKEN API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">kaken_api</a></li>
+          <li class="breadcrumb-item"><a href="kaken_api.html">kaken_api package</a></li>
+      <li class="breadcrumb-item active">kaken_api.api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/kaken_api.api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kaken-api-api-package">
+<h1>kaken_api.api package<a class="headerlink" href="#kaken-api-api-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-kaken_api.api.projects">
+<span id="kaken-api-api-projects-module"></span><h2>kaken_api.api.projects module<a class="headerlink" href="#module-kaken_api.api.projects" title="Link to this heading"></a></h2>
+<p>Projects API module for the KAKEN API client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.api.projects.ProjectsAPI">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.api.projects.</span></span><span class="sig-name descname"><span class="pre">ProjectsAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/projects.html#ProjectsAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.projects.ProjectsAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>API client for KAKEN projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Session</em>)</p></li>
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.api.projects.ProjectsAPI.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ja'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allocation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_grant_amount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_role</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/projects.html#ProjectsAPI.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.projects.ProjectsAPI.search" title="Link to this definition"></a></dt>
+<dd><p>Search for projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> | </em><em>None</em>) – Free text search keyword.</p></li>
+<li><p><strong>results_per_page</strong> (<em>int</em>) – Number of results per page (20, 50, 100, 200, 500).</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Response language (ja, en).</p></li>
+<li><p><strong>start_index</strong> (<em>int</em>) – Start index of results.</p></li>
+<li><p><strong>response_format</strong> (<em>str</em>) – Response format (html5, xml).</p></li>
+<li><p><strong>project_title</strong> (<em>str</em><em> | </em><em>None</em>) – Project title.</p></li>
+<li><p><strong>project_number</strong> (<em>str</em><em> | </em><em>None</em>) – Project number.</p></li>
+<li><p><strong>project_type</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Project type (project, area, organizer, wrapup, planned, publicly, international).</p></li>
+<li><p><strong>research_category</strong> (<em>str</em><em> | </em><em>None</em>) – Research category.</p></li>
+<li><p><strong>allocation_type</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Allocation type (hojokin, kikin, ichibu_kikin).</p></li>
+<li><p><strong>research_field</strong> (<em>str</em><em> | </em><em>None</em>) – Research field.</p></li>
+<li><p><strong>institution</strong> (<em>str</em><em> | </em><em>None</em>) – Institution.</p></li>
+<li><p><strong>grant_period_from</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period from (year).</p></li>
+<li><p><strong>grant_period_to</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period to (year).</p></li>
+<li><p><strong>grant_period_condition</strong> (<em>str</em><em> | </em><em>None</em>) – Grant period condition (1: start year, 2: end year, 3: partial period, 4: full period).</p></li>
+<li><p><strong>total_grant_amount</strong> (<em>str</em><em> | </em><em>None</em>) – Total grant amount (1: &lt; 1M, 2: 1M-5M, 3: 5M-10M, 4: 10M-50M, 5: 50M-100M, 6: 100M-500M, 7: &gt; 500M).</p></li>
+<li><p><strong>project_status</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Project status (adopted, granted, ceased, suspended, project_closed, declined, discontinued).</p></li>
+<li><p><strong>researcher_name</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher name.</p></li>
+<li><p><strong>researcher_institution</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher institution.</p></li>
+<li><p><strong>researcher_number</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher number.</p></li>
+<li><p><strong>researcher_role</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Researcher role (principal_investigator, area_organizer, co_investigator_buntan, co_investigator_renkei, research_collaborator, research_fellow, host_researcher, foreign_research_fellow, principal_investigator_support, co_investigator_buntan_support).</p></li>
+<li><p><strong>sort_order</strong> (<em>str</em><em> | </em><em>None</em>) – Sort order (1: relevance, 2: start year desc, 3: start year asc, 4: total amount desc, 5: total amount asc).</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The search response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectsResponse" title="kaken_api.models.ProjectsResponse">ProjectsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.api.researchers">
+<span id="kaken-api-api-researchers-module"></span><h2>kaken_api.api.researchers module<a class="headerlink" href="#module-kaken_api.api.researchers" title="Link to this heading"></a></h2>
+<p>Researchers API module for the KAKEN API client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.api.researchers.ResearchersAPI">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.api.researchers.</span></span><span class="sig-name descname"><span class="pre">ResearchersAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/researchers.html#ResearchersAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.researchers.ResearchersAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>API client for KAKEN researchers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Session</em>)</p></li>
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.api.researchers.ResearchersAPI.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ja'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_department</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_job_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/researchers.html#ResearchersAPI.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.researchers.ResearchersAPI.search" title="Link to this definition"></a></dt>
+<dd><p>Search for researchers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> | </em><em>None</em>) – Free text search keyword.</p></li>
+<li><p><strong>results_per_page</strong> (<em>int</em>) – Number of results per page (20, 50, 100, 200, 500).</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Response language (ja, en).</p></li>
+<li><p><strong>start_index</strong> (<em>int</em>) – Start index of results.</p></li>
+<li><p><strong>response_format</strong> (<em>str</em>) – Response format (html5, json).</p></li>
+<li><p><strong>researcher_name</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher name.</p></li>
+<li><p><strong>researcher_number</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher number.</p></li>
+<li><p><strong>researcher_institution</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher institution.</p></li>
+<li><p><strong>researcher_department</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher department.</p></li>
+<li><p><strong>researcher_job_title</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher job title.</p></li>
+<li><p><strong>project_title</strong> (<em>str</em><em> | </em><em>None</em>) – Project title.</p></li>
+<li><p><strong>project_number</strong> (<em>str</em><em> | </em><em>None</em>) – Project number.</p></li>
+<li><p><strong>research_category</strong> (<em>str</em><em> | </em><em>None</em>) – Research category.</p></li>
+<li><p><strong>research_field</strong> (<em>str</em><em> | </em><em>None</em>) – Research field.</p></li>
+<li><p><strong>institution</strong> (<em>str</em><em> | </em><em>None</em>) – Institution.</p></li>
+<li><p><strong>grant_period_from</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period from (year).</p></li>
+<li><p><strong>grant_period_to</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period to (year).</p></li>
+<li><p><strong>grant_period_condition</strong> (<em>str</em><em> | </em><em>None</em>) – Grant period condition (1: start year, 2: end year, 3: partial period, 4: full period).</p></li>
+<li><p><strong>sort_order</strong> (<em>str</em><em> | </em><em>None</em>) – Sort order (1: relevance, 2: name kana asc, 3: name kana desc, 4: name alphabet asc, 5: name alphabet desc, 6: project count asc, 7: project count desc).</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The search response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearchersResponse" title="kaken_api.models.ResearchersResponse">ResearchersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kaken_api.api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kaken_api.api" title="Link to this heading"></a></h2>
+<p>API modules for the KAKEN API client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.api.ProjectsAPI">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.api.</span></span><span class="sig-name descname"><span class="pre">ProjectsAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/projects.html#ProjectsAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.ProjectsAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>API client for KAKEN projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Session</em>)</p></li>
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.api.ProjectsAPI.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ja'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allocation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_grant_amount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_role</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/projects.html#ProjectsAPI.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.ProjectsAPI.search" title="Link to this definition"></a></dt>
+<dd><p>Search for projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> | </em><em>None</em>) – Free text search keyword.</p></li>
+<li><p><strong>results_per_page</strong> (<em>int</em>) – Number of results per page (20, 50, 100, 200, 500).</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Response language (ja, en).</p></li>
+<li><p><strong>start_index</strong> (<em>int</em>) – Start index of results.</p></li>
+<li><p><strong>response_format</strong> (<em>str</em>) – Response format (html5, xml).</p></li>
+<li><p><strong>project_title</strong> (<em>str</em><em> | </em><em>None</em>) – Project title.</p></li>
+<li><p><strong>project_number</strong> (<em>str</em><em> | </em><em>None</em>) – Project number.</p></li>
+<li><p><strong>project_type</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Project type (project, area, organizer, wrapup, planned, publicly, international).</p></li>
+<li><p><strong>research_category</strong> (<em>str</em><em> | </em><em>None</em>) – Research category.</p></li>
+<li><p><strong>allocation_type</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Allocation type (hojokin, kikin, ichibu_kikin).</p></li>
+<li><p><strong>research_field</strong> (<em>str</em><em> | </em><em>None</em>) – Research field.</p></li>
+<li><p><strong>institution</strong> (<em>str</em><em> | </em><em>None</em>) – Institution.</p></li>
+<li><p><strong>grant_period_from</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period from (year).</p></li>
+<li><p><strong>grant_period_to</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period to (year).</p></li>
+<li><p><strong>grant_period_condition</strong> (<em>str</em><em> | </em><em>None</em>) – Grant period condition (1: start year, 2: end year, 3: partial period, 4: full period).</p></li>
+<li><p><strong>total_grant_amount</strong> (<em>str</em><em> | </em><em>None</em>) – Total grant amount (1: &lt; 1M, 2: 1M-5M, 3: 5M-10M, 4: 10M-50M, 5: 50M-100M, 6: 100M-500M, 7: &gt; 500M).</p></li>
+<li><p><strong>project_status</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Project status (adopted, granted, ceased, suspended, project_closed, declined, discontinued).</p></li>
+<li><p><strong>researcher_name</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher name.</p></li>
+<li><p><strong>researcher_institution</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher institution.</p></li>
+<li><p><strong>researcher_number</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher number.</p></li>
+<li><p><strong>researcher_role</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) – Researcher role (principal_investigator, area_organizer, co_investigator_buntan, co_investigator_renkei, research_collaborator, research_fellow, host_researcher, foreign_research_fellow, principal_investigator_support, co_investigator_buntan_support).</p></li>
+<li><p><strong>sort_order</strong> (<em>str</em><em> | </em><em>None</em>) – Sort order (1: relevance, 2: start year desc, 3: start year asc, 4: total amount desc, 5: total amount asc).</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The search response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectsResponse" title="kaken_api.models.ProjectsResponse">ProjectsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kaken_api.api.ResearchersAPI">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kaken_api.api.</span></span><span class="sig-name descname"><span class="pre">ResearchersAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/researchers.html#ResearchersAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.ResearchersAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>API client for KAKEN researchers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Session</em>)</p></li>
+<li><p><strong>app_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kaken_api.api.ResearchersAPI.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ja'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'json'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_department</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">researcher_job_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">research_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grant_period_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaken_api/api/researchers.html#ResearchersAPI.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kaken_api.api.ResearchersAPI.search" title="Link to this definition"></a></dt>
+<dd><p>Search for researchers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> | </em><em>None</em>) – Free text search keyword.</p></li>
+<li><p><strong>results_per_page</strong> (<em>int</em>) – Number of results per page (20, 50, 100, 200, 500).</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Response language (ja, en).</p></li>
+<li><p><strong>start_index</strong> (<em>int</em>) – Start index of results.</p></li>
+<li><p><strong>response_format</strong> (<em>str</em>) – Response format (html5, json).</p></li>
+<li><p><strong>researcher_name</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher name.</p></li>
+<li><p><strong>researcher_number</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher number.</p></li>
+<li><p><strong>researcher_institution</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher institution.</p></li>
+<li><p><strong>researcher_department</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher department.</p></li>
+<li><p><strong>researcher_job_title</strong> (<em>str</em><em> | </em><em>None</em>) – Researcher job title.</p></li>
+<li><p><strong>project_title</strong> (<em>str</em><em> | </em><em>None</em>) – Project title.</p></li>
+<li><p><strong>project_number</strong> (<em>str</em><em> | </em><em>None</em>) – Project number.</p></li>
+<li><p><strong>research_category</strong> (<em>str</em><em> | </em><em>None</em>) – Research category.</p></li>
+<li><p><strong>research_field</strong> (<em>str</em><em> | </em><em>None</em>) – Research field.</p></li>
+<li><p><strong>institution</strong> (<em>str</em><em> | </em><em>None</em>) – Institution.</p></li>
+<li><p><strong>grant_period_from</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period from (year).</p></li>
+<li><p><strong>grant_period_to</strong> (<em>int</em><em> | </em><em>None</em>) – Grant period to (year).</p></li>
+<li><p><strong>grant_period_condition</strong> (<em>str</em><em> | </em><em>None</em>) – Grant period condition (1: start year, 2: end year, 3: partial period, 4: full period).</p></li>
+<li><p><strong>sort_order</strong> (<em>str</em><em> | </em><em>None</em>) – Sort order (1: relevance, 2: name kana asc, 3: name kana desc, 4: name alphabet asc, 5: name alphabet desc, 6: project count asc, 7: project count desc).</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The search response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearchersResponse" title="kaken_api.models.ResearchersResponse">ResearchersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kaken_api.html" class="btn btn-neutral float-left" title="kaken_api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, kojix2.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

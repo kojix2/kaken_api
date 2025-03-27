@@ -1,0 +1,29 @@
+kaken\_api.api package
+======================
+
+Submodules
+----------
+
+kaken\_api.api.projects module
+------------------------------
+
+.. automodule:: kaken_api.api.projects
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.api.researchers module
+---------------------------------
+
+.. automodule:: kaken_api.api.researchers
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: kaken_api.api
+   :members:
+   :show-inheritance:
+   :undoc-members:

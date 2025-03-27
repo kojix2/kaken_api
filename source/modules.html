@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kaken_api &mdash; KAKEN API  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kaken_api package" href="kaken_api.html" />
+    <link rel="prev" title="KAKEN API Client Library for Python" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            KAKEN API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">kaken_api</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html">kaken_api package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KAKEN API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">kaken_api</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kaken-api">
+<h1>kaken_api<a class="headerlink" href="#kaken-api" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kaken_api.html">kaken_api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.api.html">kaken_api.api package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api.projects">kaken_api.api.projects module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api.researchers">kaken_api.api.researchers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.api.html#module-kaken_api.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.cache">kaken_api.cache module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.cache.ResponseCache"><code class="docutils literal notranslate"><span class="pre">ResponseCache</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.cache.ResponseCache.get"><code class="docutils literal notranslate"><span class="pre">ResponseCache.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.cache.ResponseCache.set"><code class="docutils literal notranslate"><span class="pre">ResponseCache.set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.cache.ResponseCache.clear"><code class="docutils literal notranslate"><span class="pre">ResponseCache.clear()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.client">kaken_api.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.client.KakenApiClient"><code class="docutils literal notranslate"><span class="pre">KakenApiClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.client.KakenApiClient.close"><code class="docutils literal notranslate"><span class="pre">KakenApiClient.close()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.constants">kaken_api.constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.exceptions">kaken_api.exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiError"><code class="docutils literal notranslate"><span class="pre">KakenApiError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiRequestError"><code class="docutils literal notranslate"><span class="pre">KakenApiRequestError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiResponseError"><code class="docutils literal notranslate"><span class="pre">KakenApiResponseError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiAuthError"><code class="docutils literal notranslate"><span class="pre">KakenApiAuthError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiRateLimitError"><code class="docutils literal notranslate"><span class="pre">KakenApiRateLimitError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.exceptions.KakenApiNotFoundError"><code class="docutils literal notranslate"><span class="pre">KakenApiNotFoundError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.models">kaken_api.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.KakenApiResponse"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.KakenApiResponse.raw_data"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse.raw_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.KakenApiResponse.total_results"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse.total_results</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.KakenApiResponse.start_index"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse.start_index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.KakenApiResponse.items_per_page"><code class="docutils literal notranslate"><span class="pre">KakenApiResponse.items_per_page</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Institution"><code class="docutils literal notranslate"><span class="pre">Institution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Institution.name"><code class="docutils literal notranslate"><span class="pre">Institution.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Institution.code"><code class="docutils literal notranslate"><span class="pre">Institution.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Institution.type"><code class="docutils literal notranslate"><span class="pre">Institution.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Department"><code class="docutils literal notranslate"><span class="pre">Department</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Department.name"><code class="docutils literal notranslate"><span class="pre">Department.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Department.code"><code class="docutils literal notranslate"><span class="pre">Department.code</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.JobTitle"><code class="docutils literal notranslate"><span class="pre">JobTitle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.JobTitle.name"><code class="docutils literal notranslate"><span class="pre">JobTitle.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.JobTitle.code"><code class="docutils literal notranslate"><span class="pre">JobTitle.code</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation"><code class="docutils literal notranslate"><span class="pre">Affiliation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation.institution"><code class="docutils literal notranslate"><span class="pre">Affiliation.institution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation.department"><code class="docutils literal notranslate"><span class="pre">Affiliation.department</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation.job_title"><code class="docutils literal notranslate"><span class="pre">Affiliation.job_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation.start_date"><code class="docutils literal notranslate"><span class="pre">Affiliation.start_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Affiliation.end_date"><code class="docutils literal notranslate"><span class="pre">Affiliation.end_date</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName"><code class="docutils literal notranslate"><span class="pre">PersonName</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName.full_name"><code class="docutils literal notranslate"><span class="pre">PersonName.full_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName.family_name"><code class="docutils literal notranslate"><span class="pre">PersonName.family_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName.given_name"><code class="docutils literal notranslate"><span class="pre">PersonName.given_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName.family_name_reading"><code class="docutils literal notranslate"><span class="pre">PersonName.family_name_reading</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PersonName.given_name_reading"><code class="docutils literal notranslate"><span class="pre">PersonName.given_name_reading</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher"><code class="docutils literal notranslate"><span class="pre">Researcher</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.id"><code class="docutils literal notranslate"><span class="pre">Researcher.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.name"><code class="docutils literal notranslate"><span class="pre">Researcher.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.affiliations"><code class="docutils literal notranslate"><span class="pre">Researcher.affiliations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.researcher_number"><code class="docutils literal notranslate"><span class="pre">Researcher.researcher_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.erad_researcher_number"><code class="docutils literal notranslate"><span class="pre">Researcher.erad_researcher_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.jglobal_id"><code class="docutils literal notranslate"><span class="pre">Researcher.jglobal_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.researchmap_id"><code class="docutils literal notranslate"><span class="pre">Researcher.researchmap_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.orcid"><code class="docutils literal notranslate"><span class="pre">Researcher.orcid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.projects"><code class="docutils literal notranslate"><span class="pre">Researcher.projects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.products"><code class="docutils literal notranslate"><span class="pre">Researcher.products</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Researcher.raw_data"><code class="docutils literal notranslate"><span class="pre">Researcher.raw_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearcherRole"><code class="docutils literal notranslate"><span class="pre">ResearcherRole</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearcherRole.researcher"><code class="docutils literal notranslate"><span class="pre">ResearcherRole.researcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearcherRole.role"><code class="docutils literal notranslate"><span class="pre">ResearcherRole.role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearcherRole.participate"><code class="docutils literal notranslate"><span class="pre">ResearcherRole.participate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Category"><code class="docutils literal notranslate"><span class="pre">Category</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Category.name"><code class="docutils literal notranslate"><span class="pre">Category.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Category.path"><code class="docutils literal notranslate"><span class="pre">Category.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Category.code"><code class="docutils literal notranslate"><span class="pre">Category.code</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Field"><code class="docutils literal notranslate"><span class="pre">Field</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Field.name"><code class="docutils literal notranslate"><span class="pre">Field.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Field.path"><code class="docutils literal notranslate"><span class="pre">Field.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Field.code"><code class="docutils literal notranslate"><span class="pre">Field.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Field.field_table"><code class="docutils literal notranslate"><span class="pre">Field.field_table</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Keyword"><code class="docutils literal notranslate"><span class="pre">Keyword</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Keyword.text"><code class="docutils literal notranslate"><span class="pre">Keyword.text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Keyword.language"><code class="docutils literal notranslate"><span class="pre">Keyword.language</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectStatus"><code class="docutils literal notranslate"><span class="pre">ProjectStatus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectStatus.status_code"><code class="docutils literal notranslate"><span class="pre">ProjectStatus.status_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectStatus.date"><code class="docutils literal notranslate"><span class="pre">ProjectStatus.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectStatus.note"><code class="docutils literal notranslate"><span class="pre">ProjectStatus.note</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.PeriodOfAward"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PeriodOfAward.start_date"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward.start_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PeriodOfAward.end_date"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward.end_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PeriodOfAward.start_fiscal_year"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward.start_fiscal_year</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.PeriodOfAward.end_fiscal_year"><code class="docutils literal notranslate"><span class="pre">PeriodOfAward.end_fiscal_year</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount"><code class="docutils literal notranslate"><span class="pre">AwardAmount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.total_cost"><code class="docutils literal notranslate"><span class="pre">AwardAmount.total_cost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.direct_cost"><code class="docutils literal notranslate"><span class="pre">AwardAmount.direct_cost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.indirect_cost"><code class="docutils literal notranslate"><span class="pre">AwardAmount.indirect_cost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.fiscal_year"><code class="docutils literal notranslate"><span class="pre">AwardAmount.fiscal_year</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.currency"><code class="docutils literal notranslate"><span class="pre">AwardAmount.currency</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.AwardAmount.planned"><code class="docutils literal notranslate"><span class="pre">AwardAmount.planned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project"><code class="docutils literal notranslate"><span class="pre">Project</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.id"><code class="docutils literal notranslate"><span class="pre">Project.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.award_number"><code class="docutils literal notranslate"><span class="pre">Project.award_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.title"><code class="docutils literal notranslate"><span class="pre">Project.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.title_en"><code class="docutils literal notranslate"><span class="pre">Project.title_en</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.title_abbreviated"><code class="docutils literal notranslate"><span class="pre">Project.title_abbreviated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.categories"><code class="docutils literal notranslate"><span class="pre">Project.categories</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.fields"><code class="docutils literal notranslate"><span class="pre">Project.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.institutions"><code class="docutils literal notranslate"><span class="pre">Project.institutions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.keywords"><code class="docutils literal notranslate"><span class="pre">Project.keywords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.period_of_award"><code class="docutils literal notranslate"><span class="pre">Project.period_of_award</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.project_status"><code class="docutils literal notranslate"><span class="pre">Project.project_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.project_type"><code class="docutils literal notranslate"><span class="pre">Project.project_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.allocation_type"><code class="docutils literal notranslate"><span class="pre">Project.allocation_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.members"><code class="docutils literal notranslate"><span class="pre">Project.members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.award_amounts"><code class="docutils literal notranslate"><span class="pre">Project.award_amounts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Project.raw_data"><code class="docutils literal notranslate"><span class="pre">Project.raw_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductIdentifier"><code class="docutils literal notranslate"><span class="pre">ProductIdentifier</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductIdentifier.type"><code class="docutils literal notranslate"><span class="pre">ProductIdentifier.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductIdentifier.value"><code class="docutils literal notranslate"><span class="pre">ProductIdentifier.value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductIdentifier.authenticated"><code class="docutils literal notranslate"><span class="pre">ProductIdentifier.authenticated</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductAuthor"><code class="docutils literal notranslate"><span class="pre">ProductAuthor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductAuthor.name"><code class="docutils literal notranslate"><span class="pre">ProductAuthor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductAuthor.sequence"><code class="docutils literal notranslate"><span class="pre">ProductAuthor.sequence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductAuthor.researcher_id"><code class="docutils literal notranslate"><span class="pre">ProductAuthor.researcher_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product"><code class="docutils literal notranslate"><span class="pre">Product</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.id"><code class="docutils literal notranslate"><span class="pre">Product.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.type"><code class="docutils literal notranslate"><span class="pre">Product.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.title"><code class="docutils literal notranslate"><span class="pre">Product.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.title_en"><code class="docutils literal notranslate"><span class="pre">Product.title_en</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.authors"><code class="docutils literal notranslate"><span class="pre">Product.authors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.journal_title"><code class="docutils literal notranslate"><span class="pre">Product.journal_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.journal_title_en"><code class="docutils literal notranslate"><span class="pre">Product.journal_title_en</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.volume"><code class="docutils literal notranslate"><span class="pre">Product.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.issue"><code class="docutils literal notranslate"><span class="pre">Product.issue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.pages"><code class="docutils literal notranslate"><span class="pre">Product.pages</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.publication_date"><code class="docutils literal notranslate"><span class="pre">Product.publication_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.language"><code class="docutils literal notranslate"><span class="pre">Product.language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.reviewed"><code class="docutils literal notranslate"><span class="pre">Product.reviewed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.invited"><code class="docutils literal notranslate"><span class="pre">Product.invited</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.foreign"><code class="docutils literal notranslate"><span class="pre">Product.foreign</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.open_access"><code class="docutils literal notranslate"><span class="pre">Product.open_access</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.acknowledgement"><code class="docutils literal notranslate"><span class="pre">Product.acknowledgement</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.joint_international"><code class="docutils literal notranslate"><span class="pre">Product.joint_international</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.identifiers"><code class="docutils literal notranslate"><span class="pre">Product.identifiers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.Product.raw_data"><code class="docutils literal notranslate"><span class="pre">Product.raw_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectsResponse"><code class="docutils literal notranslate"><span class="pre">ProjectsResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProjectsResponse.projects"><code class="docutils literal notranslate"><span class="pre">ProjectsResponse.projects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearchersResponse"><code class="docutils literal notranslate"><span class="pre">ResearchersResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ResearchersResponse.researchers"><code class="docutils literal notranslate"><span class="pre">ResearchersResponse.researchers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductsResponse"><code class="docutils literal notranslate"><span class="pre">ProductsResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.models.ProductsResponse.products"><code class="docutils literal notranslate"><span class="pre">ProductsResponse.products</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api.utils">kaken_api.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.utils.build_url"><code class="docutils literal notranslate"><span class="pre">build_url()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.utils.ensure_list"><code class="docutils literal notranslate"><span class="pre">ensure_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.utils.clean_text"><code class="docutils literal notranslate"><span class="pre">clean_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.utils.parse_boolean"><code class="docutils literal notranslate"><span class="pre">parse_boolean()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.utils.join_values"><code class="docutils literal notranslate"><span class="pre">join_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kaken_api.html#module-kaken_api">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kaken_api.html#kaken_api.KakenApiClient"><code class="docutils literal notranslate"><span class="pre">KakenApiClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kaken_api.html#kaken_api.KakenApiClient.close"><code class="docutils literal notranslate"><span class="pre">KakenApiClient.close()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="KAKEN API Client Library for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kaken_api.html" class="btn btn-neutral float-right" title="kaken_api package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, kojix2.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

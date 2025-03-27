@@ -1,0 +1,69 @@
+kaken\_api package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kaken_api.api
+
+Submodules
+----------
+
+kaken\_api.cache module
+-----------------------
+
+.. automodule:: kaken_api.cache
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.client module
+------------------------
+
+.. automodule:: kaken_api.client
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.constants module
+---------------------------
+
+.. automodule:: kaken_api.constants
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.exceptions module
+----------------------------
+
+.. automodule:: kaken_api.exceptions
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.models module
+------------------------
+
+.. automodule:: kaken_api.models
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+kaken\_api.utils module
+-----------------------
+
+.. automodule:: kaken_api.utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: kaken_api
+   :members:
+   :show-inheritance:
+   :undoc-members:

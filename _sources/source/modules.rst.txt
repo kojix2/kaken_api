@@ -1,0 +1,7 @@
+kaken_api
+=========
+
+.. toctree::
+   :maxdepth: 4
+
+   kaken_api

@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kaken_api.api.projects &mdash; KAKEN API  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            KAKEN API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/modules.html">kaken_api</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">KAKEN API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">kaken_api.api.projects</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for kaken_api.api.projects</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Projects API module for the KAKEN API client.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xml.etree.ElementTree</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ET</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PROJECTS_ENDPOINT</span><span class="p">,</span>
+    <span class="n">DEFAULT_RESULTS_PER_PAGE</span><span class="p">,</span>
+    <span class="n">DEFAULT_LANGUAGE</span><span class="p">,</span>
+    <span class="n">DEFAULT_FORMAT</span><span class="p">,</span>
+    <span class="n">DEFAULT_START_INDEX</span><span class="p">,</span>
+    <span class="n">MAX_PROJECTS_RESULTS</span><span class="p">,</span>
+    <span class="n">FORMAT_XML</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">KakenApiError</span><span class="p">,</span>
+    <span class="n">KakenApiRequestError</span><span class="p">,</span>
+    <span class="n">KakenApiResponseError</span><span class="p">,</span>
+    <span class="n">KakenApiNotFoundError</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Project</span><span class="p">,</span> <span class="n">ProjectsResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_url</span><span class="p">,</span> <span class="n">ensure_list</span><span class="p">,</span> <span class="n">clean_text</span><span class="p">,</span> <span class="n">parse_boolean</span><span class="p">,</span> <span class="n">join_values</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ProjectsAPI">
+<a class="viewcode-back" href="../../../source/kaken_api.api.html#kaken_api.api.projects.ProjectsAPI">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjectsAPI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;API client for KAKEN projects.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span> <span class="n">app_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the ProjectsAPI.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            session: The requests session.</span>
+<span class="sd">            app_id: The application ID for the KAKEN API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">session</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app_id</span> <span class="o">=</span> <span class="n">app_id</span>
+
+<div class="viewcode-block" id="ProjectsAPI.search">
+<a class="viewcode-back" href="../../../source/kaken_api.api.html#kaken_api.api.projects.ProjectsAPI.search">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">keyword</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">results_per_page</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_RESULTS_PER_PAGE</span><span class="p">,</span>
+        <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_LANGUAGE</span><span class="p">,</span>
+        <span class="n">start_index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_START_INDEX</span><span class="p">,</span>
+        <span class="n">response_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_FORMAT</span><span class="p">,</span>
+        <span class="n">project_title</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">project_number</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">project_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">research_category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">allocation_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">research_field</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">institution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grant_period_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grant_period_to</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grant_period_condition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">total_grant_amount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">project_status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">researcher_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">researcher_institution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">researcher_number</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">researcher_role</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sort_order</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProjectsResponse</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search for projects.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keyword: Free text search keyword.</span>
+<span class="sd">            results_per_page: Number of results per page (20, 50, 100, 200, 500).</span>
+<span class="sd">            language: Response language (ja, en).</span>
+<span class="sd">            start_index: Start index of results.</span>
+<span class="sd">            response_format: Response format (html5, xml).</span>
+<span class="sd">            project_title: Project title.</span>
+<span class="sd">            project_number: Project number.</span>
+<span class="sd">            project_type: Project type (project, area, organizer, wrapup, planned, publicly, international).</span>
+<span class="sd">            research_category: Research category.</span>
+<span class="sd">            allocation_type: Allocation type (hojokin, kikin, ichibu_kikin).</span>
+<span class="sd">            research_field: Research field.</span>
+<span class="sd">            institution: Institution.</span>
+<span class="sd">            grant_period_from: Grant period from (year).</span>
+<span class="sd">            grant_period_to: Grant period to (year).</span>
+<span class="sd">            grant_period_condition: Grant period condition (1: start year, 2: end year, 3: partial period, 4: full period).</span>
+<span class="sd">            total_grant_amount: Total grant amount (1: &lt; 1M, 2: 1M-5M, 3: 5M-10M, 4: 10M-50M, 5: 50M-100M, 6: 100M-500M, 7: &gt; 500M).</span>
+<span class="sd">            project_status: Project status (adopted, granted, ceased, suspended, project_closed, declined, discontinued).</span>
+<span class="sd">            researcher_name: Researcher name.</span>
+<span class="sd">            researcher_institution: Researcher institution.</span>
+<span class="sd">            researcher_number: Researcher number.</span>
+<span class="sd">            researcher_role: Researcher role (principal_investigator, area_organizer, co_investigator_buntan, co_investigator_renkei, research_collaborator, research_fellow, host_researcher, foreign_research_fellow, principal_investigator_support, co_investigator_buntan_support).</span>
+<span class="sd">            sort_order: Sort order (1: relevance, 2: start year desc, 3: start year asc, 4: total amount desc, 5: total amount asc).</span>
+<span class="sd">            **kwargs: Additional parameters.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ProjectsResponse: The search response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate parameters</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">keyword</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span>
+            <span class="n">project_title</span><span class="p">,</span> <span class="n">project_number</span><span class="p">,</span> <span class="n">project_type</span><span class="p">,</span> <span class="n">research_category</span><span class="p">,</span>
+            <span class="n">allocation_type</span><span class="p">,</span> <span class="n">research_field</span><span class="p">,</span> <span class="n">institution</span><span class="p">,</span> <span class="n">grant_period_from</span><span class="p">,</span>
+            <span class="n">grant_period_to</span><span class="p">,</span> <span class="n">total_grant_amount</span><span class="p">,</span> <span class="n">project_status</span><span class="p">,</span> <span class="n">researcher_name</span><span class="p">,</span>
+            <span class="n">researcher_institution</span><span class="p">,</span> <span class="n">researcher_number</span><span class="p">,</span> <span class="n">researcher_role</span>
+        <span class="p">]):</span>
+            <span class="k">raise</span> <span class="n">KakenApiRequestError</span><span class="p">(</span><span class="s2">&quot;Either keyword or at least one search parameter must be provided.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">start_index</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="n">DEFAULT_START_INDEX</span>
+
+        <span class="k">if</span> <span class="n">start_index</span> <span class="o">&gt;</span> <span class="n">MAX_PROJECTS_RESULTS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">KakenApiRequestError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Start index cannot exceed </span><span class="si">{</span><span class="n">MAX_PROJECTS_RESULTS</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">results_per_page</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
+            <span class="n">results_per_page</span> <span class="o">=</span> <span class="n">DEFAULT_RESULTS_PER_PAGE</span>
+
+        <span class="c1"># Build parameters</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;kw&quot;</span><span class="p">:</span> <span class="n">keyword</span><span class="p">,</span>
+            <span class="s2">&quot;rw&quot;</span><span class="p">:</span> <span class="n">results_per_page</span><span class="p">,</span>
+            <span class="s2">&quot;lang&quot;</span><span class="p">:</span> <span class="n">language</span><span class="p">,</span>
+            <span class="s2">&quot;st&quot;</span><span class="p">:</span> <span class="n">start_index</span><span class="p">,</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="n">response_format</span><span class="p">,</span>
+            <span class="s2">&quot;qa&quot;</span><span class="p">:</span> <span class="n">project_title</span><span class="p">,</span>
+            <span class="s2">&quot;qb&quot;</span><span class="p">:</span> <span class="n">project_number</span><span class="p">,</span>
+            <span class="s2">&quot;c6&quot;</span><span class="p">:</span> <span class="n">join_values</span><span class="p">(</span><span class="n">ensure_list</span><span class="p">(</span><span class="n">project_type</span><span class="p">)),</span>
+            <span class="s2">&quot;qc&quot;</span><span class="p">:</span> <span class="n">research_category</span><span class="p">,</span>
+            <span class="s2">&quot;c7&quot;</span><span class="p">:</span> <span class="n">join_values</span><span class="p">(</span><span class="n">ensure_list</span><span class="p">(</span><span class="n">allocation_type</span><span class="p">)),</span>
+            <span class="s2">&quot;qd&quot;</span><span class="p">:</span> <span class="n">research_field</span><span class="p">,</span>
+            <span class="s2">&quot;qe&quot;</span><span class="p">:</span> <span class="n">institution</span><span class="p">,</span>
+            <span class="s2">&quot;s1&quot;</span><span class="p">:</span> <span class="n">grant_period_from</span><span class="p">,</span>
+            <span class="s2">&quot;s2&quot;</span><span class="p">:</span> <span class="n">grant_period_to</span><span class="p">,</span>
+            <span class="s2">&quot;o1&quot;</span><span class="p">:</span> <span class="n">grant_period_condition</span><span class="p">,</span>
+            <span class="s2">&quot;s3&quot;</span><span class="p">:</span> <span class="n">total_grant_amount</span><span class="p">,</span>
+            <span class="s2">&quot;c1&quot;</span><span class="p">:</span> <span class="n">join_values</span><span class="p">(</span><span class="n">ensure_list</span><span class="p">(</span><span class="n">project_status</span><span class="p">)),</span>
+            <span class="s2">&quot;qg&quot;</span><span class="p">:</span> <span class="n">researcher_name</span><span class="p">,</span>
+            <span class="s2">&quot;qh&quot;</span><span class="p">:</span> <span class="n">researcher_institution</span><span class="p">,</span>
+            <span class="s2">&quot;qm&quot;</span><span class="p">:</span> <span class="n">researcher_number</span><span class="p">,</span>
+            <span class="s2">&quot;c2&quot;</span><span class="p">:</span> <span class="n">join_values</span><span class="p">(</span><span class="n">ensure_list</span><span class="p">(</span><span class="n">researcher_role</span><span class="p">)),</span>
+            <span class="s2">&quot;od&quot;</span><span class="p">:</span> <span class="n">sort_order</span><span class="p">,</span>
+            <span class="s2">&quot;appid&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Add additional parameters</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Build URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">build_url</span><span class="p">(</span><span class="n">PROJECTS_ENDPOINT</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Make request</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Making request to </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+            <span class="c1"># Parse response</span>
+            <span class="k">if</span> <span class="n">response_format</span> <span class="o">==</span> <span class="n">FORMAT_XML</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_xml_response</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># For now, we only support XML responses</span>
+                <span class="k">raise</span> <span class="n">KakenApiRequestError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported response format: </span><span class="si">{</span><span class="n">response_format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">KakenApiNotFoundError</span><span class="p">(</span><span class="s2">&quot;Resource not found&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">KakenApiRequestError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request failed: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_xml_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProjectsResponse</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parse XML response.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            content: The XML content.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ProjectsResponse: The parsed response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Parse XML</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+            <span class="c1"># Extract metadata</span>
+            <span class="n">total_results</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;totalResults&quot;</span><span class="p">)</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;startIndex&quot;</span><span class="p">)</span>
+            <span class="n">items_per_page</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;itemsPerPage&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Create response</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">ProjectsResponse</span><span class="p">(</span>
+                <span class="n">raw_data</span><span class="o">=</span><span class="n">content</span><span class="p">,</span>
+                <span class="n">total_results</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">total_results</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">total_results</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">start_index</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">start_index</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">start_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">items_per_page</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">items_per_page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">items_per_page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">projects</span><span class="o">=</span><span class="p">[],</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Extract projects</span>
+            <span class="k">for</span> <span class="n">grant_award</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;.//grantAward&quot;</span><span class="p">):</span>
+                <span class="n">project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_project</span><span class="p">(</span><span class="n">grant_award</span><span class="p">)</span>
+                <span class="n">response</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span>
+
+        <span class="k">except</span> <span class="n">ET</span><span class="o">.</span><span class="n">ParseError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">KakenApiResponseError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to parse XML response: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">KakenApiResponseError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to process response: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grant_award</span><span class="p">:</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Project</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parse project from XML element.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            grant_award: The XML element.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Project: The parsed project.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># This is a simplified implementation</span>
+        <span class="c1"># A complete implementation would parse all fields from the XML</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">grant_award</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span>
+            <span class="n">award_number</span><span class="o">=</span><span class="n">grant_award</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;awardNumber&quot;</span><span class="p">),</span>
+            <span class="n">project_type</span><span class="o">=</span><span class="n">grant_award</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;projectType&quot;</span><span class="p">),</span>
+            <span class="n">raw_data</span><span class="o">=</span><span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">grant_award</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Parse title</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">grant_award</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.//summary&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">summary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.//title&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">project</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">project</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, kojix2.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
