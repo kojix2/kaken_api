@@ -17,7 +17,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -28,7 +27,7 @@ keywords = ["kaken", "api", "science", "research"]
 dependencies = [
     "requests>=2.25.0",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 [project.urls]
 "Homepage" = "https://github.com/kojix2/kaken_api"
