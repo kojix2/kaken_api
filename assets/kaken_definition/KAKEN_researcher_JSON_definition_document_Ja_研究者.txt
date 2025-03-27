@@ -1,0 +1,132 @@
+No.  内容                                      第1階層       第2階層                     第3階層                       第4階層                       第5階層  型            備考
+1    研究者情報                                researchers                                                                                                    配列          
+2    ACCN                                                    accn                                                                                             string        
+3    データソース                                            recordSource                                                                                     オブジェクト  
+4    データソース（科研費由来）                                                          id:person:kakenhi                                                    配列          
+5    データソース（eRad由来）                                                            id:person:erad_pseudo_unique                                         配列          
+6    関連情報のID                                            relation:relatedResource                                                                         配列          
+7    研究課題番号                                                                        id:project:kakenhi                                                   string        
+8    eRad研究者番号                                          id:person:erad                                                                                   配列          
+9    eRad研究者番号（不正なID）                              id:person:erad:alternative                                                                       配列          
+10   JST研究者番号                                           id:person:jst                                                                                    配列          
+11   ResearchMap 研究者番号                                  id:person:researchmap                                                                            配列          
+12   J-GLOBAL 研究者番号                                     id:person:jglobal                                                                                配列          
+13   ORCID 研究者番号                                        id:orcid                                                                                         配列          
+14   研究者名情報（代表）                                    name                                                                                             オブジェクト  
+15   研究者名 姓                                                                         name:familyName                                                      配列          
+16   研究者名 姓 言語                                                                                                  lang                                   string        iso639-1
+17   研究者名 姓 文字列                                                                                                text                                   string        
+18   研究者名 名                                                                         name:givenName                                                       配列          
+19   研究者名 名 言語                                                                                                  lang                                   string        iso639-1
+20   研究者名 名 文字列                                                                                                text                                   string        
+21   研究者名 開始年月日                                                                 since                                                                オブジェクト  
+22   研究者名 開始年月日 値                                                                                            humanReadableValue                     string        
+23   研究者名 開始年月日（年）                                                                                         commonEra:year                         int           
+24   研究者名 開始年月日（月）                                                                                         month                                  int           
+25   研究者名 開始年月日（日）                                                                                         day                                    int           
+26   研究者名 終了年月日                                                                 util                                                                 オブジェクト  
+27   研究者名 終了年月日 値                                                                                            humanReadableValue                     string        
+28   研究者名 終了年月日（年）                                                                                         commonEra:year                         int           
+29   研究者名 終了年月日（月）                                                                                         month                                  int           
+30   研究者名 終了年月日（日）                                                                                         day                                    int           
+31   研究者名情報                                            names                                                                                            配列          
+32   研究者名 表示順                                                                     sequence                                                             int           
+33   研究者名 フルネーム 値                                                              humanReadableValue                                                   配列          
+34   研究者名 フルネーム 言語                                                                                          lang                                   string        iso639-1
+35   研究者名 フルネーム 文字列                                                                                        text                                   string        
+36   研究者名 開始年月日                                                                 since                                                                オブジェクト  
+37   研究者名 開始年月日（年）                                                                                         commonEra:year                         int           
+38   研究者名 開始年月日（月）                                                                                         month                                  int           
+39   研究者名 開始年月日（日）                                                                                         day                                    int           
+40   研究者名 終了年月日                                                                 util                                                                 オブジェクト  
+41   研究者名 終了年月日（年）                                                                                         commonEra:year                         int           
+42   研究者名 終了年月日（月）                                                                                         month                                  int           
+43   研究者名 終了年月日（日）                                                                                         day                                    int           
+44   研究者名 姓                                                                         name:familyName                                                      配列          
+45   研究者名 姓 言語                                                                                                  lang                                   string        iso639-1
+46   研究者名 姓 文字列                                                                                                text                                   string        
+47   研究者名 名                                                                         name:givenName                                                       配列          
+48   研究者名 名 言語                                                                                                  lang                                   string        iso639-1
+49   研究者名 名 文字列                                                                                                text                                   string        
+50   現在の所属                                              affiliations:current                                                                             配列          
+51   所属 表示順                                                                         sequence                                                             int           
+52   所属 開始年月日                                                                     since                                                                オブジェクト  
+53   所属 開始年月日 値                                                                                                humanReadableValue                     string        
+54   所属 開始年月日（年）                                                                                             commonEra:year                         int           
+55   所属 開始年月日（月）                                                                                             month                                  int           
+56   所属 開始年月日（日）                                                                                             day                                    int           
+57   所属 終了年月日                                                                     util                                                                 オブジェクト  
+58   所属 終了年月日 値                                                                                                humanReadableValue                     string        
+59   所属 終了年月日（年）                                                                                             commonEra:year                         int           
+60   所属 終了年月日（月）                                                                                             month                                  int           
+61   所属 終了年月日（日）                                                                                             day                                    int           
+62   所属機関                                                                            affiliation:institution                                              オブジェクト  
+63   所属機関 値                                                                                                       humanReadableValue                     配列          
+64   所属機関 言語                                                                                                                                   lang     string        iso639-1
+65   所属機関 文字列                                                                                                                                 text     string        
+66   所属機関 機関種別                                                                                                 category:institution:kakenhi           string        
+67   所属機関 研究機関コード(NIIコード)                                                                                id:institution:kakenhi                 string        
+68   所属機関 MEXTコード                                                                                               id:institution:mext                    string        
+69   所属機関 JSPSコード                                                                                               id:institution:jsps                    string        
+70   所属機関 JSTコード                                                                                                id:institution:jst                     string        
+71   所属機関 eRadコード                                                                                               id:institution:erad                    string        
+72   所属部局                                                                            affiliation:department                                               オブジェクト  
+73   所属部局 値                                                                                                       humanReadableValue                     配列          
+74   所属部局 言語                                                                                                                                   lang     string        iso639-1
+75   所属部局 文字列                                                                                                                                 text     string        
+76   所属部局 MEXTコード                                                                                               id:department:mext                     string        
+77   所属部局 JSPSコード                                                                                               id:department:jsps                     string        
+78   所属部局 JSTコード                                                                                                id:department:jst                      string        
+79   所属部局 eRadコード                                                                                               id:department:erad                     string        
+80   職名                                                                                affiliation:jobTitle                                                 オブジェクト  
+81   職名 値                                                                                                           humanReadableValue                     配列          
+82   職名 言語                                                                                                                                       lang     string        iso639-1
+83   職名 文字列                                                                                                                                     text     string        
+84   職名 MEXTコード                                                                                                   id:jobTitle:mext                       string        
+85   職名 JSPSコード                                                                                                   id:jobTitle:jsps                       string        
+86   職名 JSTコード                                                                                                    id:jobTitle:jst                        string        
+87   職名 eRadコード                                                                                                   id:jobTitle:erad                       string        
+88   過去の所属（過去の研究課題情報に基づく）                affiliations:history                                                                             配列          
+89   所属 表示順                                                                         sequence                                                             int           
+90   所属 開始年月日                                                                     since                                                                オブジェクト  
+91   所属 開始年月日 値                                                                                                humanReadableValue                     string        
+92   所属 開始年月日（年）                                                                                             commonEra:year                         int           
+93   所属 開始年月日（月）                                                                                             month                                  int           
+94   所属 開始年月日（日）                                                                                             day                                    int           
+95   所属 終了年月日                                                                     util                                                                 オブジェクト  
+96   所属 終了年月日 値                                                                                                humanReadableValue                     string        
+97   所属 終了年月日（年）                                                                                             commonEra:year                         int           
+98   所属 終了年月日（月）                                                                                             month                                  int           
+99   所属 終了年月日（日）                                                                                             day                                    int           
+100  所属機関                                                                            affiliation:institution                                              オブジェクト  
+101  所属機関 値                                                                                                       humanReadableValue                     配列          
+102  所属機関 言語                                                                                                                                   lang     string        iso639-1
+103  所属機関 文字列                                                                                                                                 text     string        
+104  所属機関 機関種別                                                                                                 category:institution:kakenhi           string        
+105  所属機関 研究機関コード(NIIコード)                                                                                id:institution:kakenhi                 string        
+106  所属機関 MEXTコード                                                                                               id:institution:mext                    string        
+107  所属機関 JSPSコード                                                                                               id:institution:jsps                    string        
+108  所属機関 JSTコード                                                                                                id:institution:jst                     string        
+109  所属機関 eRadコード                                                                                               id:institution:erad                    string        
+110  所属部局                                                                            affiliation:department                                               オブジェクト  
+111  所属部局 値                                                                                                       humanReadableValue                     配列          
+112  所属部局 言語                                                                                                                                   lang     string        iso639-1
+113  所属部局 文字列                                                                                                                                 text     string        
+114  所属部局 MEXTコード                                                                                               id:department:mext                     string        
+115  所属部局 JSPSコード                                                                                               id:department:jsps                     string        
+116  所属部局 JSTコード                                                                                                id:department:jst                      string        
+117  所属部局 eRadコード                                                                                               id:department:erad                     string        
+118  職名                                                                                affiliation:jobTitle                                                 オブジェクト  
+119  職名 値                                                                                                           humanReadableValue                     配列          
+120  職名 言語                                                                                                                                       lang     string        iso639-1
+121  職名 文字列                                                                                                                                     text     string        
+122  職名 MEXTコード                                                                                                   id:jobTitle:mext                       string        
+123  職名 JSPSコード                                                                                                   id:jobTitle:jsps                       string        
+124  職名 JSTコード                                                                                                    id:jobTitle:jst                        string        
+125  職名 eRadコード                                                                                                   id:jobTitle:erad                       string        
+126  研究課題（研究課題シートを参照）                        work:project                                                                                     配列          
+127  継続中の研究課題（研究課題シートを参照）                ongoing                                                                                          オブジェクト  
+128  研究成果（成果物シートを参照）                          work:product                                                                                     配列          
+129  検索結果総件数                            totalResults                                                                                                   int           
+130  取得検索結果の開始インデックス位置        startIndex                                                                                                     int           
+131  指定取得件数                              itemsPerPage                                                                                                   int           

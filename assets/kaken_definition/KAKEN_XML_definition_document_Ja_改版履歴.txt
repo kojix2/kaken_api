@@ -1,0 +1,111 @@
+日付        版数   改版内容
+2018-07-20  4.2.7  "以下の頻度を 0..2 から 0..u に変更 
+- grantAward/productList/product/title 
+- grantAward/productListEnriched/product/title"
+2019-06-27  4.2.8  "以下のタグ項目にauthenticated属性を追加
+- productList/product/doi
+- productList/product/pmid
+- productList/product/pmcid
+- productList/product/issn
+- productList/product/jglobal
+- productList/product/isbn
+- productList/product/naid
+- productList/product/patentApplicationType
+- productList/product/patentApplicationNumber
+- productList/product/patentPublicationNumber
+- productList/product/url
+- productList/product/ut
+- productList/product/eid
+
+以下のタグ項目にsequence属性を追加
+- grantAward/summary/member/personalName
+
+以下の「内容」に収録する type を追加
+- summary/paragraphList/@type
+- paragraphList/@type
+以下の頻度を 0..1 から 0..u に変更
+- grantAward/summary/allocation
+
+以下の項目を追加
+- grantAward/summary/allocation/@participate
+- grantAward/summary/allocation/@sequence
+- grantAward/grantList/grant/allocation/@sequence
+- grantAward/grantList/grant/allocation/@niiCode
+- grantAward/grantList/grant/allocation/@mextCode
+
+APIで取得した場合の件数要素を追加
+- totalResults
+- startIndex
+- itemsPerPage
+
+以下の頻度記述を訂正
+- grantAwardList                (blank) -> 1..1
+- grantAwardList/grantAward   1..1 -> 0..u"
+                   
+2019-07-22  4.2.9  "以下の頻度を 1..1 から 0..1 に変更
+- grantAward/@awardNumber
+
+以下の項目を追加
+- grantAward/summary/awardNumber/@/awardNumber
+- grantAward/summary/awardNumber/@participate
+- grantAward/summary/awardNumber/@sequence
+- grantAward/awardNumberList/@id
+- grantAward/awardNumberList/@parentId
+- grantAward/awardNumberList/awardNumber"
+2021-03-19  4.3.0  "以下の頻度を 0..1 から 0..u に変更
+- productList/product/doi
+- productList/product/pmid
+- productList/product/pmcid
+- productList/product/issn
+- productList/product/jglobal
+- productList/product/isbn
+- productList/product/naid
+- productList/product/patentApplicationType
+- productList/product/patentApplicationNumber
+- productList/product/patentPublicationNumber
+- productList/product/url
+- productList/product/ut
+- productList/product/eid
+- productListEnriched/product/doi
+- productListEnriched/product/pmid
+- productListEnriched/product/pmcid
+- productListEnriched/product/issn
+- productListEnriched/product/jglobal
+- productListEnriched/product/isbn
+- productListEnriched/product/naid
+- productListEnriched/product/patentApplicationNumber
+- productListEnriched/product/patentPublicationNumber
+- productListEnriched/product/url
+
+以下を削除
+- memberList/member/attribute/affiliation/@from
+- memberList/member/attribute/affiliation/@to
+"
+        "以下の頻度を 0..2 から 0..u に変更
+- productList/product/productList/author/@lang
+- productList/product/productList/journalTitle/@lang
+- productList/product/productList/organizer/@lang
+- productList/product/productList/publisher/@lang
+- productList/product/productList/place/@lang
+- productList/product/productList/description/@lang
+- productList/product/productList/patentInventor/@lang
+- productList/product/productList/patentAssignee/@lang
+- productList/product/productList/country/@lang
+- productList/product/productList/counterpartInstitution/@lang
+- productList/product/productList/coinvestigatorOverseas/@lang
+- productList/product/productList/department/@lang
+- productList/product/productList/jobTitle/@lang
+- productList/product/productList/plainText/@lang
+
+以下の項目を追加
+- summary/member/affiliation
+- summary/member/affiliation/@sequence
+- summary/member/affiliation/institution
+- summary/member/affiliation/institution/@instituionType
+- summary/member/affiliation/institution/@niiCode
+- summary/member/affiliation/department
+- summary/member/affiliation/department/@niiCode
+- summary/member/affiliation/jobTitle
+- summary/member/affiliation/jobTitle.@niiCode
+
+- memberList/member/attribute/affiliation/@sequence"

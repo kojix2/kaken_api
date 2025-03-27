@@ -1,0 +1,121 @@
+No.　  パラメータ  内容
+1      kw          フリーワードを指定するパラメータ（項6～26が指定されない場合は必須）
+                   このパラメータはURLエンコードされている必要がある。
+2      rw          ページあたりの検索結果件数を指定するパラメータ（任意）
+                   デフォルトは20。20・50・100・200・500を指定できる。
+3      lang        検索結果の言語を指定するパラメータ（任意）
+                   デフォルトはja。日本語(ja)もしくは英語(en)を指定。ja、en以外の文字列、または指定がない場合はデフォルト設定とみなす。
+4      st          取得する検索結果一覧の開始番号（任意）
+                   デフォルトは1。0以下が指定された場合はデフォルト設定とみなす。最大検索件数(200000件)を越える値、または数字以外を指定するとエラー。
+5      format      レスポンスの形式を指定するパラメータ（任意）
+                   html5・xmlを指定できる。デフォルトはhtml5（通常の検索一覧画面）。これら以外の文字列、または指定がない場合はデフォルト設定とみなす。
+6      qa          研究課題名で検索する。URLエンコードされている必要がある。
+7      qb          研究課題番号で検索する。
+8      c6          研究課題種別で検索する。複数指定可能。
+                   project：研究課題
+                   area：領域
+                   organizer：総括班
+                   wrapup：成果取りまとめ
+                   planned：計画研究
+                   publicly：公募研究
+                   international：国際活動支援班
+9      qc          研究種目で検索する。URLエンコードされている必要がある。
+10     c7          配分区分で検索する。複数指定可能
+                   hojokin：補助金
+                   kikin：基金
+                   ichibu_kikin：一部基金
+11     qd          審査区分/研究分野で検索する。URLエンコードされている必要がある。
+12     qe          研究機関で検索する。URLエンコードされている必要がある。
+13     s1          助成期間（From）で検索する。数字以外を指定するとエラー。
+14     s2          助成期間（To）で検索する。数字以外を指定するとエラー。From > Toでエラー。
+15     o1          助成機関の検索条件を指定する。デフォルトは1。以下のコード以外の値が指定された場合はデフォルト設定とみなす。
+                   1：開始年度
+                   2：終了年度
+                   3：実施期間の一部を含む
+                   4：実施期間の全部を含む
+16     s3          総配分額で検索する。以下のコード以外の値が指定された場合は1とする。
+                   1：< 1,000,000
+                   2：1,000,000 ～ 5,000,000
+                   3：5,000,000 ～ 10,000,000
+                   4：10,000,000 ～ 50,000,000
+                   5：50,000,000 ～ 100,000,000
+                   6：100,000,000 ～ 500,000,000
+                   7：> 500,000,000
+17     c1          研究課題ステータスで検索する。複数指定可能
+                   adopted：採択
+                   granted：採択
+                   ceased：中断
+                   suspended：留保
+                   project_closed：完了
+                   declined：採択後辞退
+                   discontinued：中途終了
+18     qf          キーワードで検索する。URLエンコードされている必要がある。
+19     qn          研究概要で検索する。URLエンコードされている必要がある。※言語が英語(en)の場合のみ
+20     qg          研究者の姓名で検索する。URLエンコードされている必要がある。
+21     qh          研究者の所属機関で検索する。URLエンコードされている必要がある。
+22     qm          研究者番号で検索する。URLエンコードされている必要がある。
+23     c2          研究者の役割で検索する。複数指定可能
+                   principal_investigator：研究代表者
+                   area_organizer：領域代表者
+                   co_investigator_buntan：研究分担者
+                   co_investigator_renkei：連携研究者
+                   research_collaborator：研究協力者
+                   research_fellow：特別研究員
+                   host_researcher：受入研究者
+                   foreign_research_fellow：外国人特別研究員
+                   principal_investigator_support：研究支援代表者
+                   co_investigator_buntan_support：研究支援分担者
+24     c3          報告書/評価種別で検索する。複数指定可能。
+                   jiseki_hokoku：実績報告書
+                   jiko_hyoka_hokoku：自己評価報告書
+                   kenkyu_sinchoku_hyoka：研究進捗評価
+                   kenkyu_seika_hokoku_gaiyo：研究成果報告書概要
+                   chukan_hyoka_hokoku：中間評価報告書
+                   jigo_hyoka_hokoku：事後評価報告書
+                   jishi_jokyo_hokoku_kikin：実施状況報告書
+                   kenkyu_seika_hokoku：研究成果報告書
+                   saitaku_shoken：審査結果の所見
+                   saitaku_gaiyo：研究概要(採択時)
+                   kenkyu_shinchoku_hyoka_gaiyo：研究概要(研究進捗評価)
+                   kenkyu_shinchoku_hyoka_genchi_chosa：研究進捗評価(現地調査コメント)
+                   kenkyu_shinchoku_hyoka_keka：研究進捗評価(評価結果)
+                   kenkyu_shinchoku_hyoka_kensho：研究進捗評価(検証)
+                   tsuiseki_hyoka_shoken：評価の所見(追跡評価)
+                   tsuiseki_hyoka_jiko_hyoka：自己評価書(追跡評価)
+                   tsuiseki_hyoka_kenkyu_gaiyo：研究概要(追跡評価)
+                   chukan_hyoka_shoken：中間評価(所見)
+                   jigo_hyoka_shoken：事後評価(所見)
+                   kenkyu_seika_hapyo_hokoku：研究成果発表報告書
+25     s4          評価記号で検索する。URLエンコードされている必要がある。
+                   A+
+                   A
+                   A-
+                   B
+                   C
+26     s5          評価記号の種別を指定する。s4が指定されていなければ指定不可。
+                   remark_chukan：中間評価所見
+                   remark_jigo：事後評価所見
+                   assessment：評価結果
+                   inspection：検証結果
+27     qi          文献書誌で検索する。URLエンコードされている必要がある。
+28     c4          国内・外国の別で検索する。複数指定可能
+                   false：国内
+                   true：外国
+29     qj          各種IDで検索する。
+30     c5          研究成果種別で検索する。複数指定可能
+                   journal_article：雑誌論文
+                   presentation：学会発表
+                   symposium：学会・シンポジウム開催
+                   book：図書
+                   press：プレス/新聞発表
+                   note：備考
+                   patent：産業財産権
+                   publication：文献書誌
+31     qk          成果物の発行年（From）で検索する。数字以外を指定するとエラー。
+32     ql          成果物の発行年（To）で検索する。数字以外を指定するとエラー。 From > To でエラー。
+33     od          ソート条件を指定する。デフォルトは2。
+                   1：適合度
+                   2：研究開始年:新しい順
+                   3：研究開始年:古い順
+                   4：配分額合計:多い順
+                   5：配分額合計:少ない順

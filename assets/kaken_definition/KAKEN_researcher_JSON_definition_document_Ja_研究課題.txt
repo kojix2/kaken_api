@@ -1,0 +1,74 @@
+No.  内容                              第1階層       第2階層        第3階層                     第4階層                     型            備考
+1    研究課題                          work:project                                                                         配列          
+2    データソース                                    recordSource                                                           オブジェクト  
+3    研究課題番号                                                   id:project:kakenhi                                                    
+4    研究者役割                                      role                                                                   配列          
+5    研究者役割 値                                                  humanReadableValue                                      オブジェクト  
+6    研究者役割 言語                                                                            lang                        string        iso639-1
+7    研究者役割 文字列                                                                          text                        string        
+8    研究者役割 コード                                              code:roleInProject:kakenhi                              string        
+9    研究課題名                                      title                                                                  配列          
+10   研究課題名 値                                                  humanReadableValue                                      配列          
+11   研究課題名 言語                                                                            lang                        string        iso639-1
+12   研究課題名 文字列                                                                          text                        string        
+13   研究分野                                        field                                                                  配列          
+14   研究分野 値                                                    humanReadableValue                                      配列          
+15   研究分野 言語                                                                              lang                        string        iso639-1
+16   研究分野 文字列                                                                            text                        string        
+17   研究分野 コード（階層を表す）                                                              path                        string        
+18   研究分野 コード（NIIコード）                                                               niiCode                     string        
+19   研究分野 表示順                                                                            sequence                    int           同じ課題における何番目の分野情報かを表す
+20   研究種目                                        category                                                               配列          
+21   研究種目 値                                                    humanReadableValue                                      配列          
+22   研究種目 言語                                                                              lang                        string        iso639-1
+23   研究種目 文字列                                                                            text                        string        
+24   研究種目 コード（階層を表す）                                                              path                        string        
+25   研究種目 コード（NIIコード）                                                               niiCode                     string        
+26   研究機関                                        institution                                                            配列          
+27   研究機関 値                                                    humanReadableValue                                      配列          
+28   研究機関 言語                                                                              lang                        string        iso639-1
+29   研究機関 文字列                                                                            text                        string        
+30   研究機関 コード（NIIコード）                                                               niiCode                     string        
+31   研究機関 表示順                                                                            sequence                    int           
+32   キーワード                                      keyword                                                                配列          
+33   キーワード 値                                                  humanReadableValue                                      配列          
+34   キーワード 言語                                                                            lang                        string        "iso639-1、""und""固定"
+35   キーワード 文字列                                                                          text                        string        
+36   研究期間 開始年月日                             since                                                                  オブジェクト  
+37   研究期間 開始年月日 値                                         fiscal:year                                             オブジェクト  
+38   研究期間 開始年月日（年）                                                                  commonEra:year              string        
+39   研究期間 開始年月日（月）                                                                  firstDate:month             int           4固定
+40   研究期間 開始年月日（日）                                                                  firstDate:day               int           1固定
+41   研究期間 終了年度                               until                                                                  オブジェクト  
+42   研究期間 終了年度 値                                           fiscal:year                                             オブジェクト  
+43   研究期間 終了年度（年）                                                                    commonEra:year              string        
+44   研究ステータス                                  projectStatus                                                          オブジェクト  
+45   研究ステータス 当該年月日 値                                   fiscal:year                                             オブジェクト  
+46   研究ステータス 当該年月日（年）                                                            commonEra:year              string        
+47   研究ステータス 当該年月日（月）                                                            firstDate:month             int           4固定
+48   研究ステータス 当該年月日（日）                                                            firstDate:day               int           1固定
+49   研究ステータス コード                                          statusCode                                              string        
+50   研究者                                          member                                                                 配列          
+51   研究者 eRadコード                                              id:person:erad                                          string        
+52   研究者 役割                                                    role                                                    配列          
+53   研究者 役割 コード                                                                         code:roleInProject:kakenhi  string        
+54   研究者 名称                                                    person:name                                             配列          
+55   研究者 名称 言語                                                                           lang                        string        
+56   研究者 名称 文字列                                                                         text                        string        
+57   研究者 所属                                                    institution:name                                        配列          
+58   研究者 所属 言語                                                                           lang                        string        
+59   研究者 所属 文字列                                                                         text                        string        
+60   研究者 部局                                                    department:name                                         配列          
+61   研究者 部局 言語                                                                           lang                        string        
+62   研究者 部局 文字列                                                                         text                        string        
+63   研究者 職名                                                    jobTitle                                                配列          
+64   研究者 職名 言語                                                                           lang                        string        
+65   研究者 職名 文字列                                                                         text                        string        
+66   表示順                                                         sequence                                                int           
+67   継続中の課題                      ongoing                                                                              オブジェクト  検索結果一覧画面で表示する「継続中の課題」
+68   継続中の課題 研究者役割                         role                                                                   配列          
+69   継続中の課題 研究者役割 コード                                 code:roleInProject:kakenhi                              string        
+70   継続中の課題 課題名                             title                                                                  配列          
+71   継続中の課題 課題名 値                                         humanReadableValue                                      配列          
+72   継続中の課題 課題名 言語                                                                   lang                        string        
+73   継続中の課題 課題名 文字列                                                                 text                        string        

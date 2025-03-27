@@ -1,0 +1,927 @@
+№   第1階層         第2階層  第3階層  第4階層  第5階層  第６階層  第７階層  第８階層  最小  最大  内容
+0   grantAwardList                                                                    1     1     "共通仕様
+・日英があるデータで、一部の項目のみ英語がある場合で@sequenceがあるタグは、同じ@sequence番号が同じデータの日英に対応している。"
+1       grantAward (@=attribute)                                  0   u   研究課題(データ１件分）
+2                                 @id                             1   1   研究課題単位で１件のユニークなID
+3                                 @recordSet                      1   1   "データセット
+ = kakenhi : 科研費"
+4           @projectType                      0   1   "研究課題種別
+  = area: 領域
+  = project: 研究課題 (default)
+  = organizer: 総括班
+  = wrapup: 成果取りまとめ
+  = planned: 計画研究
+  = publicly: 公募研究
+  = international: 国際活動支援班"
+5           @awardNumber                         0   1   課題番号(@recordSetが同一内でユニークな番号)
+6           identifier                           0   u   研究課題の識別子
+7                         @type                  1   1   "識別子種別
+ = doi: DOI
+ = nationalAwardNumber: 統一課題番号"
+8                        normalizedValue                         1   1   正規化された値
+9           created                                              1   1   初回データ作成日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+10          modified                                             0   1   データ更新日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+11          parentAward                                          0   1   親の研究課題を指定
+12                       @id                                     0   1   親のgrantAward@id （領域、グループの課題の親のID)
+13                       title                                   1   2   親の研究課題名
+14                                        @xml:lang              0   1   " = ja: 日本語
+ = en : 英語"
+15          summary                             1   2   各提出内容を総合した最新の研究課題情報
+16                   @xml:lang                  0   1   " = ja: 日本語
+ = en : 英語"
+17              title                                       0   1   研究課題名
+18              titleAbbreviated                            0   1   研究課題名称略
+19              awardNumber                                 0   u   研究課題内に存在する課題番号
+20                                @awardNumber              1   1   課題番号の値
+21                                @participate              0   1   "年度の範囲文字列。
+ex) 2000 / 2000-2001 / 2000,2002"
+22                        @sequence              1   1   現優先順位(>=1)
+23              category                         0   u   "制度・事業名・研究種目名称
+階層分繰り返しで登録する"
+24                  @path                 0   1   制度・事業で階層を表示する形でコード値を付与する
+25                  @niiCode              0   1   "制度・事業名コード
+階層を表すようにコード値を付与する→階層表現せずに一律付与したコード"
+26              categoryFc                        0   1   研究課題に対応する制度・事業（ファセット用一意の制度・事業名）
+27                          @path                 0   1   制度・事業で階層を表示する形でコード値を付与する
+28                          @niiCode              0   1   "制度・事業名コード
+階層を表すようにコード値を付与する→階層表現せずに一律付与したコード"
+29              section                         0   1   応募区分名称
+30                       @niiCode               0   1   応募区分コード(NIIコード) 
+31              field                           0   u   研究分野名
+32                       @sequence              1   1   "出現優先順位(>=1)
+日英の対応は、sequenceの対応で判断する"
+33                  @path                    0   1   分野の階層を表示する形でコード値を付与する
+34                  @niiCode                 0   1   分野コード(NIIコード)
+35                  @fieldTable              1   1   "研究分野タイプ
+  = saimoku: 系・分野・分科・細目表
+  = jigentsuki_saimoku: 時限付細目表
+  = tokusetsu_bunya: 特設分野
+  = senmon_bunya: 専門分野表
+  = zantei_bunya: 挑戦的研究 暫定総合審査希望分野"
+36              review_section                         0   u   審査区分表（名）
+37                              @sequence              1   1   "出現優先順位(>=1)
+日英の対応は、sequenceの対応で判断する"
+38                           @niiCode                1   1   審査区分コード(NII コード)
+39                           @tableType              1   1   審査区分表タイプ
+40              institution                          0   u   研究機関名称
+41                           @niiCode                0   1   研究機関コード(NIIコード)
+42                           @type                   0   1   "機関種別
+  = academic: 教育機関・研究機関
+  = industry: 民間企業"
+43                  @participate              0   1   "研究課題における研究機関の関与年
+ 2000年のみ関与した: 2000
+ 2000年から2002年まで関与した: 2000-2002
+ 2000年と2002年に関与した: 2000,2002"
+44                      @sequence              1   1   この課題内での、研究機関の表示順。
+45              agency                         1   1   ファンディング機関名
+46                      @niiCode               0   1   "ファンディング機関ID
+ = kakenhi : 科研"
+47              allocation                            0   u   配分区分の名称
+48                          @niiCode                  1   1   配分区分コード
+49                          @participate              0   1   "2000年のみ関与した場合 : 2000
+2000年から2002年まで関与した: 2000-2002
+2000年と2002年に関与した: 2000,2002"
+50                      @sequence              1   1   出現優先順位(>=1)
+51              member                         0   u   "研究者を以下の役割の順番で記述する
+  1. area_organizer
+  2. principal_investigator
+  3. host_researcher
+  4. research_fellow
+  5. principal_investigator_support
+  x. 上記以外"
+52                  @sequence              1   1   "出現優先順位(>=1)
+同じ研究者情報の日英は、同じsequence値の対応で判断できる"
+53                  @participate              0   1   "研究課題における研究者の関与年、研究者情報の出現年
+ 2000年のみ関与した場合 : 2000
+ 2000年から2002年まで関与した: 2000-2002
+ 2000年と2002年に関与した: 2000,2002"
+54                  @researcherNumber                            0   1   統一研究者番号
+55                  @eradCode                                    0   1   eRadコード
+56                  @role                                        1   1   研究者役割
+57                  institution                                  0   1   所属機関（廃止予定）
+58                                     @institutionType          0   1   "機関種別
+  = academic: 教育機関・研究機関
+  = industry: 民間企業"
+59                               @niiCode                           0   1   @niiCode
+60                  department                                      0   1   所属の所属（廃止予定）
+61                               @niiCode                           0   1   @niiCode
+62                  jobTitle                                        0   1   所属の職名（廃止予定）
+63                               @niiCode                           0   1   @niiCode
+64                  affiliation                                     0   u   研究者所属
+65                               @sequence                          1   1   出現優先順位(>=1)
+66                               institution                        0   1   所属機関
+67                                            @institutionType      0   1   "機関種別
+  = academic: 教育機関・研究機関
+  = industry: 民間企業"
+68                                            @niiCode      0   1   @niiCode
+69                                department                0   1   所属の所属
+70                                            @niiCode      0   1   @niiCode
+71                                jobTitle                  0   1   所属の職名
+72                                            @niiCode      0   1   @niiCode
+73                  personalName                            0   1   研究者氏名
+74                                @sequence                 1   1   "出現優先順位(>=1)
+1の場合を研究者名に関する主とする表記、それ以外を別名表記とする"
+75                                           fullName                     1   1   姓名(姓と名の間は半角スペースで区切る）
+76                                           familyName                   0   1   姓
+77                                                             @yomi      0   1   姓（ヨミ）
+78                                           givenName                    1   1   名
+79                                                             @yomi      0   1   名（ヨミ）
+80                             memberStatus                               0   1   研究者のステータス情報
+81                                           @statusCode                  0   1   ステータスコード
+82                             enriched                                   0   1   外部の情報を元に生成された「この研究者を意味する研究者コード」
+83                                           researcherNumber             1   u   研究者コード
+84                                                             @type      1   1   コード種別。 現時点ではeradのみをサポート
+85              projectStatus                                             0   1   "研究ステータス
+note以外の属性は1つのみ出力"
+86                  @fiscalYear              0   1   summaryを作成時のgrant@fiscalYear、または report@fiscalYearを設定
+87                  @statusCode              1   1   "研究課題の状態
+ = adopted: 採択
+ = granted: 交付
+ = ceased: 中断
+ = suspended: 留保
+ = project_closed: 完了
+ = declined: 採択後辞退
+ = discontinued: 中途終了"
+88                             @date                         0   1   年月日 (YYYY-MM-DD)
+89                             note                          0   1   ステータス変更理由
+90              keywordList                                  0   1   キーワードのセット（課題で出現する全てのキーワードをマージする）
+91                             keyword                       1   u   キーワード
+92                                        @sequence          1   1   出現優先順位 (>=1)
+93              paragraphList                                0   u   段落種別ごとの段落セット
+94                             @sequecne                     1   1   段落セットごとの優先順位.
+95                             @parentId                     1   1   summary に収録された paragraphList の、本来の親のID
+96                             @type                         1   1   "段落種別
+  = purpose: 研究の目的
+  = abstract: 研究概要
+  = outline_of_research_achievement: 研究成果の概要
+  = outline_of_research_performance: 研究実績の概要
+  = implementation_schedule: 本年度の研究実施計画
+  = progress: 現在までの達成度
+  = planning_scheme: 今後の研究の推進方策
+  = planning_budget_expenditure: 次年度の研究費の使用
+  = plan_of_carry_over: 次年度使用額の使用計画
+  = significance_of_research_achievement: 研究成果の学術的意義や社会的意義
+  = outline_of_research_initial: 研究開始時の研究の概要"
+97                              paragraph                     1   u   個々の段落テキスト
+98                                         @sequence          1   1   出現優先順位(>=1)
+99              classification                                0   u   "次の type を有する classification は全て収録する。
+
+1. inspection
+2. assessment
+3. remark_jigo
+4. remark_chukan
+
+次の type を有する classification は、最新の paragraphList のものに限って収録する。
+
+1. progress"
+100                  @id                1   1   classficationのid
+101                  @type              1   1   "分類種別
+  = inspection: 検証結果
+  = assessment: 評価結果
+  = remark_jigo: 事後評価所見
+  = remark_chukan: 中間評価所見
+  = progress: 現在までの達成度"
+102                             @statusCode              1   1   分類種別毎の内容
+                                @sequence                1   1   出現優先順位 (>=1)
+104              periodOfAward                           0   1   "研究期間
+summary@langに関わらず１件のみ出力"
+105                  @searchStartFiscalYear              0   1   "検索用研究開始年度　summary@langに関わらず１件のみ出力
+summary@langが複数ある場合は""ja""優先で採用
+開始年月日、開始年度から作成"
+106                  @searchEndFiscalYear              0   1   "検索用研究終了年度
+終了年月日、終了年度から作成"
+107                  startDate                      0   1   開始年月日 (YYYY-MM-DD)
+108                  endDate                        0   1   終了年月日 (YYYY-MM-DD)
+109                             @estimated          0   1   "予定フラグ
+  = false: 確定
+  = true: 予定"
+110                      @nondisclosure          0   1   "非公開フラグ
+ = true: 非公開"
+111                  startFiscalYear                      0   1   開始年度 (YYYY)
+112                  endFiscalYear                        0   1   終了年度 (YYYY)
+113                                   @estimated          0   1   "予定フラグ
+  = false: 確定
+  = true: 予定"
+114                      @nondisclosure          0   1   "非公開フラグ
+ = true: 非公開"
+115              overallAwardAmount                        0   u   配分額（合計） 
+116                                  @planned              0   1   "計画額フラグ
+  = false: 配分額 (default)
+  = true: 計画額"
+117                            @sequence                                       1   1   出現優先順位 (>=1)
+118                            @userDefiendId                                  0   1   配分額（合計）のID。
+119                            @caption                                        1   1   この配分額の名目。
+120                            directCost                                      0   1   合計の直接経費（課題の総合計）
+121                            indirectCost                                    0   1   合計の間接経費（課題の総合計）
+122                            totalCost                                       1   1   合計経費（課題の総合計）
+123                            convertedJpyTotalCost                           0   1   合計経費の日本円換算額
+124                            unit                                            0   1   単位
+125                                                   originalValue            1   1   表示用
+126                                                   normalizedValue          0   1   正規化された値
+127          grantList                                                         0   1   採択課題/交付リスト
+128                     grant                                                  1   u   採択課題/交付
+129                            @id                                             1   1   各データ間のユニークID。ただし、日英は同じIDを付与する。
+130                            @xml:lang                                       0   1   " = ja: 日本語
+ = en : 英語"
+131                  @fiscalYear              0   1   当該年度
+132                  @sequence                1   1   出現優先順位 (>=1)
+133                  @continued               0   1   "新規・継続区分 (廃止予定)
+  = false: 新規 (default)
+  = true: 継続"
+134                  title                                             0   1   研究課題名
+135                  titleAlternative                                  0   u   研究課題名別名。検索のみに利用される。
+136                  titleAbbreviated                                  0   1   研究課題名称略
+137                  periodOfAward                                     0   1   研究期間
+138                                    @searchStartFiscalYear          0   1   "検索用研究開始年度
+開始年月日、開始年度から作成"
+139                      @searchEndFiscalYear          0   1   "検索用研究終了年度
+終了年月日、終了年度から作成"
+140                      startDate                  0   1   開始年月日 (YYYY-MM-DD)
+141                      endDate                    0   1   終了年月日 (YYYY-MM-DD)
+142                                 @estimated      0   1   "予定フラグ
+  = false: 確定
+  = true: 予定"
+143                          @nondisclosure      0   1   "非公開フラグ
+ = true: 非公開"
+144                      startFiscalYear                  0   1   開始年度 (YYYY)
+145                      endFiscalYear                    0   1   終了年度 (YYYY)
+146                                       @estimated      0   1   "予定フラグ
+  = false: 確定
+  = true: 予定"
+147                          @nondisclosure      0   1   "非公開フラグ
+ = true: 非公開"
+148                  category              0   u   "制度・事業名・研究種目名
+階層分繰り返しで登録する"
+149                      @path             0   1   制度・事業で階層を表示する形でコード値を付与する
+150                      @niiCode          0   1   "制度・事業名コード
+階層を表すようにコード値を付与する→階層表現せずに一律付与したコード"
+151                           @mextCode          0   1   MEXTコード
+152                           @jspsCode          0   1   JSPSコード
+153                           @eradCode          0   1   eRadコード
+154                  section                     0   1   応募区分名
+155                           @niiCode           0   1   応募区分コード(NIIコード) 
+156                           @mextCode          0   1   MEXTコード
+157                           @jspsCode          0   1   JSPSコード
+158                           @eradCode          0   1   eRadコード
+159                  field                       0   u   研究分野名
+160                           @sequence          1   1   "出現優先順位(>=1)
+日英の対応は、sequenceの対応で判断する"
+161                      @path                0   1   分野を階層を表示する形でコード値を付与する
+162                      @fieldTable          0   1   "研究分野タイプ
+  = saimoku: 系・分野・分科・細目表
+  = jigentsuki_saimoku: 時限付細目表
+  = tokusetsu_bunya: 特設分野
+  = senmon_bunya: 専門分野表
+  = tokubetsu_kenkyu: 特別研究員の細目表
+  = zantei_bunya: 挑戦的研究 暫定総合審査希望分野"
+163                                  @niiCode           0   1   分野コード(NIIコード)
+164                                  @mextCode          0   1   MEXTコード
+165                                  @jspsCode          0   1   JSPSコード
+166                                  @eradCode          0   1   eRadコード
+167                  review_section                     0   u   審査区分表（名）
+168                                  @sequence          1   1   "出現優先順位(>=1)
+日英の対応は、sequenceの対応で判断する"
+169                               @niiCode            1   1   審査区分コード(NII コード)
+170                               @tableType          1   1   審査区分表タイプ
+171                  institution                      0   u   研究機関
+172                               @type               0   1   "機関種別
+  = academic: 教育機関・研究機関
+  = industry: 民間企業"
+173                              @sequence             1   1   出現優先順位(>=1)
+174                              @niiCode              0   1   研究機関コード(NIIコード)
+175                              @mextCode             0   1   MEXTコード
+176                              @jspsCode             0   1   JSPSコード
+177                              @jglobalCode          0   1   J-GLOBAL機関コード
+178                              @eradCode             0   1   eRadコード
+179                              @rmapCode             0   1   Researchmapコード
+180                  allocation                        0   u   配分区分
+181                              @sequence             1   1   出現優先順位(>=1)
+182                              @niiCode              0   1   配分区分コード(NIIコード)
+183                              @mextCode             0   1   MEXTコード
+184                  agency                            1   1   ファンディング機関名
+185                              @niiCode              0   1   "ファンディング機関ID
+ = kakenhi : 科研"
+186                  projectStatus                       0   1   研究ステータス
+187                                 @statusCode          1   1   "研究課題の状態
+ = adopted: 採択
+ = granted: 交付
+ = ceased: 中断
+ = suspended: 留保
+ = project_closed: 完了
+ = declined: 採択後辞退
+ = discontinued: 中途終了"
+188                                      @date             0   1   年月日 (YYYY-MM-DD)
+189                                      note              0   1   ステータス変更理由
+190                  overallAwardAmount                    0   1   配分額（合計）
+191                                      @planned          0   1   "計画額フラグ
+  = false: 配分額 (default)
+  = true: 計画額"
+192                                         directCost                                  0   1   合計の直接経費（課題の総合計）
+193                                         indirectCost                                0   1   合計の間接経費（課題の総合計）
+194                                         totalCost                                   1   1   合計経費（課題の総合計）
+195                                         convertedJpyTotalCost                       0   1   合計経費の日本円換算額
+196                                         unit                                        0   1   単位
+197                                                                originalValue        1   1   表示用
+198                                                                normalizedValue      0   1   正規化された値
+199                              created                                                1   1   初回データ作成日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+200                              modified                                               0   1   データ更新日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+201          reportList                                                                 0   1   報告書/評価リスト
+202                      report                                                         1   u   報告書
+203                              @id                                                    1   1   各データ間のユニークID。ただし、日英は同じIDを付与する。
+204                              @parentId                                              1   1   リンクする親の研究課題 - 廃止予定。 parent 要素に移行
+205                              @type                                                  1   1   "研究課題詳細レコード種別(コード)
+ = jiseki_hokoku: 実績報告書
+ = jiko_hyoka_hokoku: 自己評価報告書
+ = kenkyu_shinchoku_hyoka: 研究進捗評価
+ = kenkyu_seika_hokoku_gaiyo: 研究成果報告書概要
+ = chukan_hyoka_hokoku: 中間評価報告書
+ = jigo_hyoka_hokoku: 事後評価報告書
+ = jishi_jokyo_hokoku: 実施状況報告書 
+ = kenkyu_seika_hokoku: 研究成果報告書
+ = saitaku_shoken: 審査結果の所見
+ = saitaku_gaiyo: 研究概要(採択時)
+ = kenkyu_shinchoku_hyoka_gaiyo: 研究概要(研究進捗評価)
+ = kenkyu_shinchoku_hyoka_genchi_chosa: 研究進捗評価(現地調査コメント)
+ = kenkyu_shinchoku_hyoka_keka: 研究進捗評価(評価結果)
+ = kenkyu_shinchoku_hyoka_kensho: 研究進捗評価(検証)
+ = tsuiseki_hyoka_shoken: 評価の所見(追跡評価)
+ = tsuiseki_hyoka_jiko_hyoka: 自己評価書(追跡評価)
+ = tsuiseki_hyoka_kenkyu_gaiyo: 研究概要(追跡評価)
+ = chukan_hyoka_shoken: 中間評価(所見)
+ = jigo_hyoka_shoken: 事後評価(所見)
+ = jiseki_hokoku_2: 実績報告書(2)
+ = db_kokai_henko_hokoku: データベース公開状況変更報告書
+ = shinbun_keisai_hokoku: 新聞掲載等報告書
+ = kenkyu_seika_hapyo_hokoku: 研究成果発表報告書"
+206                  @xml:lang              0   1   "評価の記述言語
+  = ja : 日本語
+  = en : 英語"
+207                  @fiscalYear              0   1   当該年度
+208                  @sequence                1   1   "出現優先順位 (>=1)
+値が大きい方が最新"
+209                  @date                  0   1   評価年月日(YYYY-MM-DD)
+210                  parent                 1   u   当該報告書の親要素
+211                            @id          1   1   親である要素のID
+212                  language               0   1   "ISO 639-2 本文記述言語
+ jpn: 日本語
+ eng: 英語"
+213                  title                                  0   1   研究課題名
+214                  titleAbbreviated                       0   1   研究課題名称略
+215                  doi                                    0   u   DOI
+216                  projectStatus                          0   1   研究ステータス
+217                                    @statusCode          1   1   "研究課題の状態
+ = adopted:採択
+ = granted:交付
+ = ceased:中断
+ = suspended:一時中断
+ = project_closed:終了
+ = declined:辞退
+ = discontinued:中途終了"
+218                                            @date          0   1   年月日 (YYYY-MM-DD)
+219                                            note           0   1   ステータス変更理由
+220                                created                    1   1   データ作成日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+221                                modified                   0   1   データ更新日付（YYYY-MM-DDTHH:MI:SSZ） ISO8601形式 GMT 末尾Zあり
+222          productList                                      0   1   研究成果リスト
+223                       product                             1   u   研究成果物
+224                                @id                        1   1   研究成果物データのユニークID。
+225                                @productId                 0   1   データ作成者がこの成果物を追跡するために指定するID.
+226                                @type                      1   1   "研究成果種別
+  = journal_article: 雑誌論文
+  = presentation: 学会発表
+  = symposium: 学会・シンポジウム開催
+  = book: 図書
+  = press: プレス/新聞発表
+  = award: 受賞
+  = other: その他
+  = note: 備考
+  = patent: 産業財産権
+  = publication: 文献書誌
+  = database: データベース
+  = jointInternational: 国際共同研究"
+227                  @sequence              1   1   出現優先順位 (>=1)
+228                  @reviewed              0   1   "査読の有無
+  = false: 査読無
+  = true: 査読有"
+229                  @invited              0   1   "招待講演かどうか
+  = false: 招待講演でない
+  = true: 招待講演"
+230                  @foreign              0   1   "外国かどうか
+  = false: 国内
+  = true: 外国"
+231                  @openAccess              0   1   "オープンアクセスとしているかどうか
+  = false: オープンアクセスではない (default)
+  = true: オープンアクセスとしている"
+232                  @acknowledgement              0   1   "謝辞の記載があるかどうか
+  = false: ない (default)
+  = true: ある"
+233                  @jointInternational              0   1   "国際共著/国際学会であるかどうか
+  = false: 国際共著/国際学会でない (default)
+  = true: 国際共著/国際学会である"
+234                  language              0   1   "主な記述言語 (ISO 639-2 のコードで指定)
+  = jpn: 日本語
+  = eng: 英語"
+235                  parent                          1   u   親を指定
+236                          @id                     1   1   親のID
+237                  doi                             0   u   DOI
+238                          @originalValue          0   1   表示用
+239                          @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+240                  pmid                          0   u   PubMedID
+241                        @originalValue          0   1   表示用
+242                        @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+243                  pmcid                          0   u   PubMedCID
+244                         @originalValue          0   1   表示用
+245                         @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+246                  issn                          0   u   ISSN
+247                        @originalValue          0   1   表示用
+248                        @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+249                  jglobal                          0   u   J-GLOBAL ID
+250                           @originalValue          0   1   表示用
+251                           @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+252                  isbn                          0   u   ISBN
+253                        @originalValue          0   1   表示用ISBN
+254                        @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+255                  naid                          0   u   CiNii Books or ArticlesのID
+256                        @originalValue          0   1   表示用 CiNii Books or ArticlesのID
+257                        @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+258                  patentApplicationType                          0   u   産業財産権 特許種別
+259                                         @originalValue          0   1   表示用
+260                                         @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+261                  patentApplicationNumber                          0   u   産業財産権 出願番号
+262                                           @originalValue          0   1   表示用
+263                                           @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+264                  patentPublicationNumber                          0   u   産業財産権 公開番号
+265                                           @originalValue          0   1   表示用
+266                                           @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+267                  url                          0   u   URL
+268                       @originalValue          0   1   Aタグの表示用
+269                       @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+270                  ut                          0   u   WoS ID
+271                      @originalValue          0   1   表示用
+272                      @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+273                  eid                          0   u   Scopus ID
+274                       @originalValue          0   1   表示用
+275                       @authenticated          0   1   "認証済みかどうか
+ = false: 認証済みではない
+ = true: 認証済み"
+276                  author                     0   u   著者名・発表者名
+277                          @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+278                  title                     0   u   タイトル・論文標題・発表タイトル
+279                         @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+280                  journalTitle                     0   u   収録誌
+281                                @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+282                  organizer                     0   u   学会名
+283                             @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+284                  publisher                     0   u   出版者
+285                             @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+286                  volume              0   1   巻
+287                  issue               0   1   号
+288                  pages               0   1   "ページ。正規化済みの値を FROM-TO のようにハイフンでつなぐ。
+FROM がない場合には -TO のようにする。
+TO がない場合には FROM- のようにする。
+両方ない場合には、テキストが省略される。"
+289                              @originalValue          0   1   表示用のページ
+290                  totalPages                          0   1   総ページ数
+291                              @originalValue          0   1   表示用の総ページ数
+292                  year                                0   1   発行年(４桁に正規化)
+293                              @originalValue          0   1   表示用の年月日
+294                  date                                0   1   年月日 (YYYY-MM-DD)，範囲の場合は (YYYY-MM-DD/YYYY-MM-DD)に正規化
+295                              @originalValue          0   1   表示用の年月日
+296                  place                               0   u   発表場所
+297                              @xml:lang               0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+298                  description                        0   1   説明
+299                  patentInventor                     0   u   産業財産権 発明者
+300                                  @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+301                  patentAssignee                     0   u   産業財産権 権利者/出願人
+302                                  @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+303                  patentApplicationDate                          0   1   産業財産権 出願年月日 (YYYY-MM-DD)
+304                                         @originalValue          0   1   表示用
+305                  patentApplicationYear                          0   1   産業財産権 出願年 (YYYY)
+306                                         @originalValue          0   1   表示用
+307                  patentIssueDate                                0   1   産業財産権 取得年月日 (YYYY-MM-DD)
+308                                         @originalValue          0   1   表示用
+309                  patentIssueYear                                0   1   産業財産権 取得年 (YYYY)
+310                                         @originalValue          0   1   表示用
+311                  patentPublicationDate                          0   1   産業財産権 公開年月日 (YYYY-MM-DD)
+312                                         @originalValue          0   1   表示用
+313                  patentPublicationYear                          0   1   産業財産権 公開年 (YYYY)
+314                                         @originalValue          0   1   表示用
+315                  country                                        0   u   国名
+316                                         @xml:lang               0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+317                  otherCountry                               0   1   他の国数
+318                  counterpartInstitution                     0   u   外国機関名
+319                                          @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+320                  otherInstitution                           0   1   他の機関数
+321                  coinvestigatorOverseas                     0   u   主な海外共同研究者名
+322                                          @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+323                  department                     0   u   部局
+324                              @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+325                  jobTitle                     0   u   職名
+326                            @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+327                  changeDate                     0   1   渡航先外国機関変更承認日
+328                  plainText                      0   u   平文テキスト
+329                              @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語
+  = zh: 中国語
+  = ko: 韓国語
+  = ru: ロシア語
+  = es: スペイン語"
+330          productListEnriched                              0   1   他情報源からの情報補完および課題内での名寄せ統合がされた、研究成果物
+331                               product                     1   u   情報補完済み研究成果物
+332                                        @id                1   1   情報補完済み研究成果物のID
+333                                        @type              1   1   "研究成果種別
+  = journal_article: 雑誌論文
+  = presentation: 学会発表
+  = symposium: 学会・シンポジウム開催
+  = book: 図書
+  = press: プレス/新聞発表
+  = award: 受賞
+  = other: その他
+  = note: 備考
+  = patent: 産業財産権
+  = publication: 文献書誌
+  = database: データベース
+  = jointInternational: 国際共同研究"
+334                  @sequence              1   1   出現優先順位 (>=1)
+335                  @reviewed              0   1   "査読の有無
+  = false: 査読無
+  = true: 査読有"
+336                  @invited              0   1   "招待講演かどうか
+  = false: 招待講演でない
+  = true: 招待講演"
+337                  @foreign              0   1   "外国かどうか
+  = false: 国内
+  = true: 外国"
+338                  @openAccess              0   1   "オープンアクセスとしているかどうか
+  = false: オープンアクセスではない (default)
+  = true: オープンアクセスとしている"
+339                  @acknowledgement              0   1   "謝辞の記載があるかどうか
+  = false: ない (default)
+  = true: ある"
+340                  @jointInternational              0   1   "国際共著/国際学会であるかどうか
+  = false: 国際共著/国際学会でない (default)
+  = true: 国際共著/国際学会である"
+341                  ref                           1   u   情報統合元の研究成果物を参照する
+342                            @id                 1   1   対応する成果物の //productList/product@id
+343                            @productId          0   1   対応する成果物の //productList/product@productId
+344                  language                      0   1   "研究成果物の主な記述言語 (ISO 639-2 のコードで指定)
+  = jpn: 日本語
+  = eng: 英語"
+345                  parent              1   u   "この名寄せ結果の根拠となった成果物の親である要素。
+@id レベルで重複なく、すべて収録する"
+346                                           @id                1   1   対応する要素の @id
+347                  doi                                         0   u   DOI
+348                  pmid                                        0   u   PubMedID
+349                  pmcid                                       0   u   PubMedCID
+350                  issn                                        0   u   ISSN
+351                  jglobal                                     0   u   J-GLOBAL ID
+352                  isbn                                        0   u   ISBN
+353                  naid                                        0   u   CiNii Books or ArticlesのID
+354                  patentApplicationType                       0   u   産業財産権 特許種別
+355                  patentApplicationNumber                     0   u   産業財産権 出願番号
+356                  patentPublicationNumber                     0   u   産業財産権 公開番号
+357                  url                                         0   u   URL
+358                  author                                      0   2   著者名・発表者名
+359                                           @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+360                  title                     0   u   タイトル・論文標題・発表タイトル
+361                         @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+362                  journalTitle                     0   2   収録誌
+363                                @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+364                  organizer                     0   2   学会名
+365                             @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+366                  publisher                     0   2   出版者
+367                             @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+368                  volume              0   1   巻
+369                  issue               0   1   号
+370                  pages               0   1   "ページ。正規化済みの値を FROM-TO のようにハイフンでつなぐ。
+FROM がない場合には -TO のようにする。
+TO がない場合には FROM- のようにする。
+両方ない場合には、テキストが省略される。"
+371                  totalPages                     0   1   総ページ数
+372                  year                           0   1   発行年(４桁に正規化)
+373                  date                           0   1   年月日 (YYYY-MM-DD)，範囲の場合は (YYYY-MM-DD/YYYY-MM-DD)に正規化
+374                  place                          0   2   発表場所
+375                              @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+376                  description                        0   1   説明
+377                  patentInventor                     0   2   産業財産権 発明者
+378                                  @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+379                  patentAssignee                     0   2   産業財産権 権利者/出願人
+380                                  @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+381                  patentApplicationDate                     0   1   産業財産権 出願年月日 (YYYY-MM-DD)
+382                  patentApplicationYear                     0   1   産業財産権 出願年 (YYYY)
+383                  patentIssueDate                           0   1   産業財産権 取得年月日 (YYYY-MM-DD)
+384                  patentIssueYear                           0   1   産業財産権 取得年 (YYYY)
+385                  patentPublicationDate                     0   1   産業財産権 公開年月日 (YYYY-MM-DD)
+386                  patentPublicationYear                     0   1   産業財産権 公開年 (YYYY)
+387                  country                                   0   2   国名
+388                                         @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+389                  otherCountry                               0   1   他の国数
+390                  counterpartInstitution                     0   2   外国機関名
+391                                          @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+392                  otherInstitution                           0   1   他の機関数
+393                  coinvestigatorOverseas                     0   2   主な海外共同研究者名
+394                                          @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+395                  department                     0   2   部局
+396                              @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+397                  jobTitle                     0   2   職名
+398                            @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+399                  changeDate                     0   1   渡航先外国機関変更承認日
+400                  plainText                      0   2   平文テキスト
+401                              @xml:lang          0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+402          memberList                                 0   1   研究者リスト
+403                      member                         1   u   研究者１名分をユニークとしてmemberタグとして繰り返す
+404                              @id                    1   1   研究者1名分のデータのユニークID。ただし、同じデータの日英は同じIDを付与する。
+405                              @sequence              1   1   出現優先順位 (>=1)
+406                              @xml:lang              0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+407                  @role              1   1   "研究者役割
+  = principal_investigator: 研究代表者
+  = corporate_responsibility: 企業責任者
+  = research_responsibility: 研究責任者
+  = area_organizer: 領域代表者
+  = co_investigator_buntan: 研究分担者/共同研究者
+  = co_investigator_renkei: 連携研究者
+  = research_collaborator: 研究協力者
+  = research_fellow: 特別研究員
+  = foreign_research_fellow: 外国人特別研究員
+  = host_researcher: 受入研究者
+  = production_group: 作成組織
+  = host_organization: 主催団体
+  = industry_academia_coordinator: コーディネーター
+  = program_manager: プログラムマネージャー
+  = research_supervisor: 研究総括
+  = deputy_supervisor: 副研究総括
+  = assistant_supervisor: 研究総括補佐
+  = research_area_advisor: 領域アドバイザー
+  = research_area_management_advisor: 領域運営アドバイザー
+  = international_advisor: 国際・領域運営アドバイザー
+  = international_advisory_board_member: インターナショナル・アドバイザリー・ボード
+  = evaluation_committee_member: 評価委員
+  = research_areas_council_member: 領域評価 審議会委員
+  = research_areas_experts: 領域評価 専門委員
+  = research_area_evaluation_committee_member: 領域評価 評価委員
+  = follow_up_evaluation_committee_member: 追跡評価 評価委員
+  = unknown: 不明"
+408                  @fiscalYear                                                    0   1   年度
+409                  @researcherNumber                                              0   1   統一 研究者番号
+410                  @eradCode                                                      0   1   eRad 研究者番号
+411                  @rmapCode                                                      0   1   ResearchMap 研究者番号
+412                  @jglobalCode                                                   0   1   J-GLOBAL 研究者番号
+413                  @orcid                                                         0   1   ORCID 研究者番号
+414                  parent                                                         1   u   親を指定
+415                                     @id                                         1   1   親のID
+416                  personalName                                                   0   u   研究者氏名
+417                                     @sequence                                   1   1   出現優先順位 (>=1)
+418                                     fullName                                    0   1   姓名(姓と名の間は半角スペースで区切る）
+419                                     familyName                                  0   1   姓
+420                                                  @yomi                          0   1   姓（ヨミ）
+421                                     givenName                                   0   1   名
+422                                                  @yomi                          0   1   名（ヨミ）
+423                  attribute                                                      0   1   研究者属性
+424                                     affiliation                                 0   u   研究機関・部局・職
+425                                                  @sequence                      1   1   出現優先順位(>=1)
+426                                                  institution                    0   1   所属機関
+427                                                               @institutionType  0   1   "機関種別
+  = academic: 教育機関・研究機関
+  = industry: 民間企業"
+428                                                         @institutionCode  0   1   研究機関コード(NIIコード)
+429                                                         @mextCode         0   1   MEXTコード
+430                                                         @jspsCode         0   1   JSPSコード
+431                                                         @eradCode         0   1   eRadコード
+432                                             department                    0   1   所属部局
+433                                                         @mextCode         0   1   MEXTコード
+434                                                         @jspsCode         0   1   JSPSコード
+435                                                         @eradCode         0   1   eRadコード
+436                                             jobTitle                      0   1   職
+437                                                         @mextCode         0   1   MEXTコード
+438                                                         @jspsCode         0   1   JSPSコード
+439                                                         @eradCode         0   1   eRadコード
+440                  memberStatus                                             0   u   研究者のステータス情報
+441                                @statusCode                                1   1   "ステータスコード
+declined: 辞退"
+442                                            @date          0   1   年月日 (YYYY-MM-DD)
+443                                            @from          0   1   開始年月日 (YYYY-MM-DD)
+444                                            @to            0   1   終了年月日 (YYYY-MM-DD)
+445                                            note           0   1   備考
+446          awardNumberList                                  0   u   課題番号リスト
+447                           @id                             0   1   課題番号の要素ID
+448                           @parentId                       1   1   親のID
+449                           awardNumber                     1   1   課題番号の値
+450          keywordList                                      0   u   キーワードリスト
+451                           @xml:lang                       0   1   "記述言語
+  = ja: 日本語 (default)
+  = en: 英語"
+452                         @parentId                         1   1   親のID
+453                         keyword                           1   u   キーワード
+454                                    @sequence              1   1   出現優先順位 (>=1)
+455          paragraphList                                    0   u   段落リスト
+456                         @type                             1   1   "段落種別
+  = abstract: 研究概要
+  = progress: 現在までの達成度
+  = planning_scheme: 今後の研究の推進方策
+  = planning_budget_expenditure: 次年度の研究費の使用計画
+  = purpose: 研究の目的
+  = implementation_schedule: 本年度の研究実施計画
+  = remark: 所見
+  = common_remark: 共通所見
+  = assessment: 評価
+  = assessment_result: 評価結果
+  = inspection: 検証結果
+  = conclusion: 結び
+  = note: 備考
+  = outline_of_research_performance: 研究実績の概要
+  = outline_of_research_achievement: 研究成果の概要
+  = reason_of_carry_over: 次年度使用額が生じた理由 
+  = plan_of_carry_over: 次年度使用額の使用計画
+  = free_research_field: 自由記述の分野
+  = custom: 「見出し」により指定
+  = significance_of_research_achievement: 研究成果の学術的意義や社会的意義
+  = outline_of_research_initial: 研究開始時の研究の概要"
+457              @xml:lang                  0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+458              @parentId                         1   1   親を指定
+459              @sequence                         1   1   出現優先順位 (>=1)
+460              caption                           0   2   見出し
+461                         @xml:lang              0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+462                              paragraph                              1   u   段落
+463                                              @sequence              1   1   出現優先順位 (>=1)
+464          classificationList                                         0   1   分類リスト
+465                              classification                         1   u   分類
+466                                              @id                    1   1   各データ間のユニークID。
+467                                              @parentId              1   1   親を指定
+468                                              @type                  1   1   "分類種別
+  = progress: 現在までの達成度
+  = remark_chukan: 中間評価所見
+  = remark_jigo: 事後評価所見
+  = assessment: 評価結果
+  = inspection: 検証結果"
+469                                                      1   1   分類種別毎の内容
+470          awardAmountList                             0   u   配分額リスト
+471                           @sequence                  1   1   "表示順序。ユーザが定義した順序を小さい順に再採番したもの。
+1 以上の正整数である。"
+472              @parentId                       1   1   この要素の親の ID 
+473              @userDefinedId                  0   1   "ユーザ定義ID。
+共通インポートXML における id 属性。"
+474              caption                         0   u   この配分額リストの名目。
+475                       @xml:lang              0   1   "「配分額リストの名目」がどの言語で書かれているか。
+言語が不明である場合は、この属性は省略する。"
+476              awardAmount                         １  u   配分額（計画額）共通インポートXMLでawardAmountList/awardAmount/@overall=falseのデータ
+477                           @sequence              1   1   "出現優先順位 (>=1)
+awardAmountList/awardAmount内でユニークな値"
+478                  @fiscalYear              0   1   年度(YYYY)
+479                  @planned                 0   1   "計画額フラグ
+  = false : 配分額
+  = true : 計画額"
+480                               directCost                                      0   1   直接経費(yen)
+481                               indirectCost                                    0   1   間接経費(yen)
+482                               totalCost                                       1   1   合計額(yen)
+483                               convertedJpyTotalCost                           0   1   合計額の日本円換算額
+484                               unit                                            0   1   単位
+485                                                      originalValue            1   1   表示用
+486                                                      normalizedValue          0   1   正規化された値
+487          fileList                                                             0   u   添付ファイルリスト
+488                    @parentId                                                  1   1   親の ID
+489                    file                                                       1   u   添付ファイル
+490                               @sequence                                       1   1   出現優先順位 (>=1)
+491                               @xml:lang                                       0   1   "記述言語
+  = ja: 日本語
+  = en: 英語"
+492                            name              1   1   ファイル名
+493                            path              1   1   ファイルのURL
+494      totalResults                            0   1   APIでXMLを取得した場合の、指定検索条件での検索結果総件数
+495      startIndex                              0   1   APIでXMLを取得した場合の、取得検索結果の指定開始番号
+496      itemsPerPage                            0   1   APIでXMLを取得した場合の、検索結果の指定取得件数

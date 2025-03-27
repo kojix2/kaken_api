@@ -1,0 +1,139 @@
+No.  内容                                第1階層       第2階層                               第3階層             第4階層  第5階層  型            備考
+1    成果物                              work:product                                                                              配列          
+2    ACCN                                              accn                                                                        配列          
+3    データソース                                      recordSource                                                                オブジェクト  
+4    研究課題の成果物ID                                                                      id:product:kakenhi                    配列          
+5    成果物の種別                                      resourceType                                                                string        
+6    査読の有無                                        attribute:reviewed                                                          boolean       
+7    招待講演かどうか                                  attribute:invited                                                           boolean       
+8    外国かどうか                                      attribute:foreign                                                           boolean       
+9    オープンアクセスとしているかどうか                rights:accessLevel                                                          string        
+10   謝辞の記載があるかどうか                          attribute:acknowledgement                                                   boolean       
+11   国際共著/国際学会であるかどうか                   attribute:jointInternationalResearch                                        boolean       
+12   言語                                              language                                                                    string        iso639-3
+13   データソース                                      relation:relatedResource                                                    配列          
+14   研究課題番号                                                                            id:project:kakenhi                    string        
+15   "junii2で定義されたデータ要素
+　医中誌ID
+　本文フルテキストへのリンク
+　版に関する情報
+　　異版である
+　　異版あり
+　　要件とする
+　　別フォーマットである
+　　別フォーマットあり"                                                                             uri                                                                                             string  
+16                       junii2で定義された「その他の資源識別子」                                                                        unclassified                                                       string        
+17                       DOI                                                                        id:doi                                                                                                  配列          
+18                       DOI 値                                                                                                          value                                                              string        
+19                       正規化前のDOI                                                              attribute:id:doi:asWritten                                                                              配列          
+20                       正規化前のDOI 文字列                                                                                            text                                                               string        
+21                       正規化前のDOI DOI候補の抽出                                                                                     valueExtracted                                                     配列          
+22                       正規化前のDOI DOI候補 値                                                                                                                               value                       string        
+23                       正規化前のDOI DOI候補 別情報源での存在有無                                                                                                             existenceConfirmed          boolean       
+24                       PubMedID                                                                   id:pmid                                                                                                 string        
+25                       PubMedCID                                                                  id:pmcid                                                                                                string        
+26                       ISSN                                                                       source:issn                                                                                             配列          
+27                       ISSN 値                                                                                                         value                                                              string        
+28                       NCID                                                                       source:ncid                                                                                             string        
+29                       J-GLOBAL ID                                                                id:jglobal                                                                                              string        
+30                       ISBN                                                                       source:isbn                                                                                             配列          
+31                       ISBN 値                                                                                                         value                                                              string        
+32                       NAID:CiNii Books or ArticlesのID                                           id:naid                                                                                                 オブジェクト  
+33                       NAID:CiNii Books or ArticlesのID 値                                                                             value                                                              string        
+34                       産業財産権                                                                 id:patentId                                                                                             オブジェクト  
+35                       産業財産権 特許種別                                                                                             applicationType                                                    string        
+36                       産業財産権 出願番号                                                                                             applicationNumber                                                  string        
+37                       産業財産権 公開番号                                                                                             publicationNumber                                                  string        
+38                       URL                                                                        id:uri                                                                                                  string        
+39                       著者名・発表者名（KAKENから抽出）                                          attribute:creator:candidate                                                                             配列          
+40                       著者名・発表者名（名寄せによる推定かどうか）                                                                    estimated                                                          boolean       
+41                       著者名・発表者名 リスト                                                                                         list                                                               配列          
+42                       著者名・発表者名 表示順                                                                                                                                sequence                    int           
+43                       著者名・発表者名 名称                                                                                                                                  person:name                 配列          
+44                       著者名・発表者名 言語                                                                                                                                                      lang    string        iso639-1
+45                       著者名・発表者名 文字列                                                                                                                                                    text    string        
+46                       著者名・発表者名 ACCN                                                                                                                                  accn                        配列          
+47                       著者名・発表者名（一本書き）                                               creator:unparsed                                                                                        配列          
+48                       著者名・発表者名 言語                                                                                           lang                                                               string        iso639-1
+49                       著者名・発表者名 文字列                                                                                         text                                                               string        
+50                       タイトル・論文標題・発表タイトル（日本語）                                 title:main                                                                                              オブジェクト  
+51                       タイトル・論文標題・発表タイトル（日本語） 言語                                                                 lang                                                               string        iso639-1、ja固定
+52                       タイトル・論文標題・発表タイトル（日本語） 文字列                                                               text                                                               string        
+53                       タイトル・論文標題・発表タイトル（英語）                                   title:alternative                                                                                       オブジェクト  
+54                       タイトル・論文標題・発表タイトル（英語） 言語                                                                   lang                                                               string        iso639-1、en固定
+55                       タイトル・論文標題・発表タイトル（英語） 文字列                                                                 text                                                               string        
+56                       収録誌（日本語）                                                           source:title                                                                                            オブジェクト  
+57                       収録誌（日本語） 言語                                                                                           lang                                                               string        iso639-1、ja固定
+58                       収録誌（日本語） 文字列                                                                                         text                                                               string        
+59                       収録誌（英語）                                                             source:alternativeTitle                                                                                 オブジェクト  
+60                       収録誌（英語） 言語                                                                                             lang                                                               string        iso639-1、en固定
+61                       収録誌（英語） 文字列                                                                                           text                                                               string        
+62                       学会名（一本書き）                                                         contributor:organizer:unparsed                                                                          配列          
+63                       学会名 言語                                                                                                     lang                                                               string        iso639-1
+64                       学会名 名称                                                                                                     text                                                               string        
+65                       出版者（一本書き）                                                         contributor:publisher:unparsed                                                                          配列          
+66                       出版者 言語                                                                                                     lang                                                               string        iso639-1
+67                       出版者 名称                                                                                                     text                                                               string        
+68                       巻                                                                         source:volume                                                                                           string        
+69                       号                                                                         source:issue                                                                                            string        
+70                       開始ページ                                                                 source:firstPage                                                                                        string        
+71                       終了ページ                                                                 source:lastPage                                                                                         string        
+72                       総ページ数                                                                 description:totalPages                                                                                  int           
+73                       年月日                                                                     date:publicationDate                                                                                    オブジェクト  
+74                       年月日 値                                                                                                       humanReadableValue                                                 配列          
+75                       年月日 文字列                                                                                                                                          text                        string        
+76                       年月日（年）                                                                                                    commonEra:year                                                     int           
+77                       年月日（月）                                                                                                    month                                                              int           
+78                       年月日（日）                                                                                                    day                                                                int           
+79                       発表場所                                                                   description:conferenceLocation                                                                          オブジェクト  
+80                       発表場所 値                                                                                                     humanReadableValue                                                 配列          
+81                       発表場所 言語                                                                                                                                          lang                        string        
+82                       発表場所 文字列                                                                                                                                        text                        string        
+83                       説明                                                                       description:description                                                                                 配列          
+84                       説明 言語                                                                                                       lang                                                               string        
+85                       説明 文字列                                                                                                     text                                                               string        
+86                       産業財産権 発明者（CrossRef）                                              contributor:patentInventor                                                                              配列          
+87                       産業財産権 発明者 表示順                                                                                        sequence                                                           int           
+88                       産業財産権 発明者 名称                                                                                          person:name                                                        配列          
+89                       産業財産権 発明者 言語                                                                                                                                 lang                        string        
+90                       産業財産権 発明者 文字列                                                                                                                               text                        string        
+91                       産業財産権 発明者 研究者番号                                                                                    attribute:id:person:kakenhi:estimated                              配列          
+92                       産業財産権 発明者 ORCID iD                                                                                      id:orcid                                                           string        
+93                       産業財産権 発明者 ACCN                                                                                                                                 accn                        string        
+94                       産業財産権 発明者（一本書き）                                              contributor:patentInventor:unparsed                                                                     配列          
+95                       産業財産権 発明者 言語                                                                                          lang                                                               string        
+96                       産業財産権 発明者 文字列                                                                                        text                                                               string        
+97                       産業財産権 権利者/出願人（CrossRef）                                       contributor:patentAssignee                                                                              配列          
+98                       産業財産権 権利者/出願人 表示順                                                                                 sequence                                                           int           
+99                       産業財産権 権利者/出願人 名称                                                                                   person:name                                                        配列          
+100                      産業財産権 権利者/出願人 言語                                                                                                                          lang                        string        
+101                      産業財産権 権利者/出願人 文字列                                                                                                                        text                        string        
+102                      産業財産権 権利者/出願人 研究者番号                                                                             attribute:id:person:kakenhi:estimated                              配列          
+103                      産業財産権 権利者/出願人 ORCID iD                                                                               id:orcid                                                           string        
+104                      産業財産権 権利者/出願人（一本書き）                                       contributor:patentAssignee:unparsed                                                                     配列          
+105                      産業財産権 権利者/出願人 言語                                                                                   lang                                                               string        
+106                      産業財産権 権利者/出願人 文字列                                                                                 text                                                               string        
+107                      産業財産権 出願年月日                                                      date:patentApplicationDate                                                                              オブジェクト  
+108                      産業財産権 出願年月日 値                                                                                        humanReadableValue                                                 配列          
+109                      産業財産権 出願年月日 文字列                                                                                                                           text                        string        
+110                      産業財産権 出願年月日（年）                                                                                     commonEra:year                                                     int           
+111                      産業財産権 出願年月日（月）                                                                                     month                                                              int           
+112                      産業財産権 出願年月日（日）                                                                                     day                                                                int           
+113                      産業財産権 取得年月日                                                      date:patentIssueDate                                                                                    オブジェクト  
+114                      産業財産権 取得年月日 値                                                                                        humanReadableValue                                                 配列          
+115                      産業財産権 取得年月日 文字列                                                                                                                           text                        string        
+116                      産業財産権 取得年月日（年）                                                                                     commonEra:year                                                     int           
+117                      産業財産権 取得年月日（月）                                                                                     month                                                              int           
+118                      産業財産権 取得年月日（日）                                                                                     day                                                                int           
+119                      産業財産権 公開年月日                                                      date:patentPublicationDate                                                                              オブジェクト  
+120                      産業財産権 公開年月日 値                                                                                        humanReadableValue                                                 配列          
+121                      産業財産権 公開年月日 文字列                                                                                                                           text                        string        
+122                      産業財産権 公開年月日（年）                                                                                     commonEra:year                                                     int           
+123                      産業財産権 公開年月日（月）                                                                                     month                                                              int           
+124                      産業財産権 公開年月日（日）                                                                                     day                                                                int           
+125                      平文テキスト                                                               description:plainText                                                                                   配列          
+126                      平文テキスト 言語                                                                                               lang                                                               string        
+127                      平文テキスト 文字列                                                                                             text                                                               string        
+128                      junii2で定義された「コンテンツ本体に関する権利規定」                       description:annotation                                                                                  オブジェクト  
+129                      junii2で定義された「コンテンツ本体に関する権利規定」 注釈としての種類                                           class                                                              text          """rights""固定"
+130                      junii2で定義された「コンテンツ本体に関する権利規定」 文字列                                                     text                                                               text          

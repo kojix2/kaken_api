@@ -1,0 +1,132 @@
+No.  Contents                                                           The 1st Level  The 2nd Level               The 3rd Level                 The 4th Level                 The 5th Level  Type    Notes
+1    Researcher Information                                             researchers                                                                                                           array   
+2    ACCN                                                                              accn                                                                                                   string  
+3    Data Source                                                                       recordSource                                                                                           object  
+4    Data Source (KAKEN-derived)                                                                                   id:person:kakenhi                                                          array   
+5    Data Source (eRad-derived)                                                                                    id:person:erad_pseudo_unique                                               array   
+6    Related information's ID                                                          relation:relatedResource                                                                               array   
+7    Research Project Number                                                                                       id:project:kakenhi                                                         string  
+8    eRad Researcher Number                                                            id:person:erad                                                                                         array   
+9    eRad Researcher Number (incorrect ID)                                             id:person:erad:alternative                                                                             array   
+10   JST Researcher Number                                                             id:person:jst                                                                                          array   
+11   ResearchMap Researcher Number                                                     id:person:researchmap                                                                                  array   
+12   J-GLOBAL Researcher Number                                                        id:person:jglobal                                                                                      array   
+13   ORCID Researcher Number                                                           id:orcid                                                                                               array   
+14   Researcher Name Information (Representative)                                      name                                                                                                   object  
+15   Researcher Name, Family Name                                                                                  name:familyName                                                            array   
+16   Researcher Name, Family Name, Language                                                                                                      lang                                         string  iso639-1
+17   Researcher Name, Family Name, Text                                                                                                          text                                         string  
+18   Researcher Name, Given Name                                                                                   name:givenName                                                             array   
+19   Researcher Name, Given Name, Language                                                                                                       lang                                         string  iso639-1
+20   Researcher Name, Given Name, Text                                                                                                           text                                         string  
+21   Researcher Name, Start Date                                                                                   since                                                                      object  
+22   Researcher Name, Start Date, Value                                                                                                          humanReadableValue                           string  
+23   Researcher Name, Start Date (Year)                                                                                                          commonEra:year                               int     
+24   Researcher Name, Start Date (Month)                                                                                                         month                                        int     
+25   Researcher Name, Start Date (Day)                                                                                                           day                                          int     
+26   Researcher Name, End Date                                                                                     util                                                                       object  
+27   Researcher Name, End Date, Value                                                                                                            humanReadableValue                           string  
+28   Researcher Name, End Date (Year)                                                                                                            commonEra:year                               int     
+29   Researcher Name, End Date (Month)                                                                                                           month                                        int     
+30   Researcher Name, End Date (Day)                                                                                                             day                                          int     
+31   Researcher Name Information                                                       names                                                                                                  array   
+32   Researcher Name, Display Order                                                                                sequence                                                                   int     
+33   Researcher Name, Full Name                                                                                    humanReadableValue                                                         array   
+34   Researcher Name, Full Name, Language                                                                                                        lang                                         string  iso639-1
+35   Researcher Name, Full Name, Text                                                                                                            text                                         string  
+36   Researcher Name, Start Date                                                                                   since                                                                      object  
+37   Researcher Name, Start Date (Year)                                                                                                          commonEra:year                               int     
+38   Researcher Name, Start Date (Month)                                                                                                         month                                        int     
+39   Researcher Name, Start Date (Day)                                                                                                           day                                          int     
+40   Researcher Name, End Date                                                                                     util                                                                       object  
+41   Researcher Name, End Date (Year)                                                                                                            commonEra:year                               int     
+42   Researcher Name, End Date (Month)                                                                                                           month                                        int     
+43   Researcher Name, End Date (Day)                                                                                                             day                                          int     
+44   Researcher Name, Family Name                                                                                  name:familyName                                                            array   
+45   Researcher Name, Family Name, Language                                                                                                      lang                                         string  iso639-1
+46   Researcher Name, Family Name, Text                                                                                                          text                                         string  
+47   Researcher Name, Given Name                                                                                   name:givenName                                                             array   
+48   Researcher Name, Given Name, Language                                                                                                       lang                                         string  iso639-1
+49   Researcher Name, Given Name, Text                                                                                                           text                                         string  
+50   Current Affiliation                                                               affiliations:current                                                                                   array   
+51   Affiliation,  Display Order                                                                                   sequence                                                                   int     
+52   Affiliation,  Start Date                                                                                      since                                                                      object  
+53   Affiliation,  Start Date, Value                                                                                                             humanReadableValue                           string  
+54   Affiliation,  Start Date (Year)                                                                                                             commonEra:year                               int     
+55   Affiliation,  Start Date (Month)                                                                                                            month                                        int     
+56   Affiliation,  Start Date (Day)                                                                                                              day                                          int     
+57   Affiliation,  End Date                                                                                        util                                                                       object  
+58   Affiliation,  End Date, Value                                                                                                               humanReadableValue                           string  
+59   Affiliation,  End Date (Year)                                                                                                               commonEra:year                               int     
+60   Affiliation,  End Date (Month)                                                                                                              month                                        int     
+61   Affiliation,  End Date (Day)                                                                                                                day                                          int     
+62   Affiliated Institutuion                                                                                       affiliation:institution                                                    object  
+63   Affiliated Institutuion, Value                                                                                                              humanReadableValue                           array   
+64   Affiliated Institutuion, Language                                                                                                                                         lang           string  iso639-1
+65   Affiliated Institutuion, Text                                                                                                                                             text           string  
+66   Affiliated Institutuion, Institution Type                                                                                                   category:institution:kakenhi                 string  
+67   Affiliated Institutuion, Research Institution Code (NII Code)                                                                               id:institution:kakenhi                       string  
+68   Affiliated Institutuion, MEXT Code                                                                                                          id:institution:mext                          string  
+69   Affiliated Institutuion, JSPS Code                                                                                                          id:institution:jsps                          string  
+70   Affiliated Institutuion, JST Code                                                                                                           id:institution:jst                           string  
+71   Affiliated Institutuion, eRad Code                                                                                                          id:institution:erad                          string  
+72   Affiliated Department                                                                                         affiliation:department                                                     object  
+73   Affiliated Department, Value                                                                                                                humanReadableValue                           array   
+74   Affiliated Department, Language                                                                                                                                           lang           string  iso639-1
+75   Affiliated Department, Text                                                                                                                                               text           string  
+76   Affiliated Department, MEXT Code                                                                                                            id:department:mext                           string  
+77   Affiliated Department, JSPS Code                                                                                                            id:department:jsps                           string  
+78   Affiliated Department, JST Code                                                                                                             id:department:jst                            string  
+79   Affiliated Department, eRad Code                                                                                                            id:department:erad                           string  
+80   Job Title                                                                                                     affiliation:jobTitle                                                       object  
+81   Job Title, Value                                                                                                                            humanReadableValue                           array   
+82   Job Title, Language                                                                                                                                                       lang           string  iso639-1
+83   Job Title, Text                                                                                                                                                           text           string  
+84   Job Title, MEXT Code                                                                                                                        id:jobTitle:mext                             string  
+85   Job Title, JSPS Code                                                                                                                        id:jobTitle:jsps                             string  
+86   Job Title, JST Code                                                                                                                         id:jobTitle:jst                              string  
+87   Job Title, eRad Code                                                                                                                        id:jobTitle:erad                             string  
+88   Past Affiliation (Based on the past Research Project Information)                 affiliations:history                                                                                   array   
+89   Affiliation,  Display Order                                                                                   sequence                                                                   int     
+90   Affiliation,  Start Date                                                                                      since                                                                      object  
+91   Affiliation,  Start Date, Value                                                                                                             humanReadableValue                           string  
+92   Affiliation,  Start Date (Year)                                                                                                             commonEra:year                               int     
+93   Affiliation,  Start Date (Month)                                                                                                            month                                        int     
+94   Affiliation,  Start Date (Day)                                                                                                              day                                          int     
+95   Affiliation,  End Date                                                                                        util                                                                       object  
+96   Affiliation,  End Date, Value                                                                                                               humanReadableValue                           string  
+97   Affiliation,  End Date (Year)                                                                                                               commonEra:year                               int     
+98   Affiliation,  End Date (Month)                                                                                                              month                                        int     
+99   Affiliation,  End Date (Day)                                                                                                                day                                          int     
+100  Affiliated Institutuion                                                                                       affiliation:institution                                                    object  
+101  Affiliated Institutuion, Value                                                                                                              humanReadableValue                           array   
+102  Affiliated Institutuion, Language                                                                                                                                         lang           string  iso639-1
+103  Affiliated Institutuion, Text                                                                                                                                             text           string  
+104  Affiliated Institutuion, Institution Type                                                                                                   category:institution:kakenhi                 string  
+105  Affiliated Institutuion, Research Institution Code (NII Code)                                                                               id:institution:kakenhi                       string  
+106  Affiliated Institutuion, MEXT Code                                                                                                          id:institution:mext                          string  
+107  Affiliated Institutuion, JSPS Code                                                                                                          id:institution:jsps                          string  
+108  Affiliated Institutuion, JST Code                                                                                                           id:institution:jst                           string  
+109  Affiliated Institutuion, eRad Code                                                                                                          id:institution:erad                          string  
+110  Affiliated Department                                                                                         affiliation:department                                                     object  
+111  Affiliated Department, Value                                                                                                                humanReadableValue                           array   
+112  Affiliated Department, Language                                                                                                                                           lang           string  iso639-1
+113  Affiliated Department, Text                                                                                                                                               text           string  
+114  Affiliated Department, MEXT Code                                                                                                            id:department:mext                           string  
+115  Affiliated Department, JSPS Code                                                                                                            id:department:jsps                           string  
+116  Affiliated Department, JST Code                                                                                                             id:department:jst                            string  
+117  Affiliated Department, eRad Code                                                                                                            id:department:erad                           string  
+118  Job Title                                                                                                     affiliation:jobTitle                                                       object  
+119  Job Title, Value                                                                                                                            humanReadableValue                           array   
+120  Job Title, Language                                                                                                                                                       lang           string  iso639-1
+121  Job Title, Text                                                                                                                                                           text           string  
+122  Job Title, MEXT Code                                                                                                                        id:jobTitle:mext                             string  
+123  Job Title, JSPS Code                                                                                                                        id:jobTitle:jsps                             string  
+124  Job Title, JST Code                                                                                                                         id:jobTitle:jst                              string  
+125  Job Title, eRad Code                                                                                                                        id:jobTitle:erad                             string  
+126  Research Project (Refer to Research Project Sheet)                                work:project                                                                                           array   
+127  Ongoing Research Project (Refer to Research Project Sheet)                        ongoing                                                                                                object  
+128  Research Output (Refer to Research Output Sheet)                                  work:product                                                                                           array   
+129  Total Number of Search Results                                     totalResults                                                                                                          int     
+130  Location of Start Index for Acquired Search Results                startIndex                                                                                                            int     
+131  Specified Number of Acquired Items                                 itemsPerPage                                                                                                          int     
