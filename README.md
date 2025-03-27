@@ -1,5 +1,10 @@
 # KAKEN API Client Library for Python
 
+[![Python Tests](https://github.com/kojix2/kaken_api/actions/workflows/python-tests.yml/badge.svg)](https://github.com/kojix2/kaken_api/actions/workflows/python-tests.yml)
+[![Lint](https://github.com/kojix2/kaken_api/actions/workflows/lint.yml/badge.svg)](https://github.com/kojix2/kaken_api/actions/workflows/lint.yml)
+[![Documentation](https://github.com/kojix2/kaken_api/actions/workflows/docs.yml/badge.svg)](https://kojix2.github.io/kaken_api/)
+[![PyPI version](https://badge.fury.io/py/kaken-api.svg)](https://badge.fury.io/py/kaken-api)
+
 KAKEN API（科研費API）のPythonクライアントライブラリです。このライブラリを使用すると、科研費の研究課題や研究者の情報を簡単に検索・取得することができます。
 
 ## インストール

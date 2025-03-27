@@ -1,0 +1,39 @@
+name: Lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black isort
+    
+    - name: Lint with flake8 (critical errors only)
+      run: |
+        flake8 kaken_api tests examples --count --select=E9,F63,F7,F82 --show-source --statistics
+    
+    - name: Lint with flake8 (warnings, non-blocking)
+      run: |
+        flake8 kaken_api tests examples --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Check formatting with black (informational only)
+      run: |
+        black --check --diff kaken_api tests examples || echo "Formatting suggestions available, but not enforced"
+    
+    - name: Check imports with isort (informational only)
+      run: |
+        isort --check-only --diff --profile black kaken_api tests examples || echo "Import order suggestions available, but not enforced"
