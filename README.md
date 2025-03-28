@@ -4,6 +4,7 @@
 [![Lint](https://github.com/kojix2/kaken_api/actions/workflows/lint.yml/badge.svg)](https://github.com/kojix2/kaken_api/actions/workflows/lint.yml)
 [![Documentation](https://github.com/kojix2/kaken_api/actions/workflows/docs.yml/badge.svg)](https://kojix2.github.io/kaken_api/)
 [![PyPI version](https://badge.fury.io/py/kaken-api.svg)](https://badge.fury.io/py/kaken-api)
+[![Lines of Code](https://img.shields.io/endpoint?url=https%3A%2F%2Ftokei.kojix2.net%2Fapi%2Fbadge%2Flines%3Furl%3Dhttps%3A%2F%2Fgithub.com%2Fkojix2%2Fkaken_api)](https://tokei.kojix2.net/analyze?url=https%3A%2F%2Fgithub.com%2Fkojix2%2Fkaken_api)
 
 > **Note**: このライブラリは VSCode Cline [Anthropic Claude 3.7 Sonnet](https://www.anthropic.com/claude) によって作成されています。
 
