@@ -19,7 +19,7 @@ jobs:
       KAKEN_APP_ID: ${{ secrets.KAKEN_APP_ID }}
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     
